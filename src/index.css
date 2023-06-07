@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.btn-main {
+    background-color: #79A84A;
+    padding: 0 25px;
+    font-weight: 700;
+}
