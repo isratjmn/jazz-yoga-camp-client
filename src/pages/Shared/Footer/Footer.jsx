@@ -13,7 +13,7 @@ import {
 
 
 
-// #f5f1eb
+
 
 const Footer = () => {
 	return (
