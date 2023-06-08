@@ -11,16 +11,12 @@ import {
 	
 } from "react-icons/fa";
 
-
-
-
-
 const Footer = () => {
 	return (
 		<>
 			<section className="bg-[#edf3f3]">
 				{/* {<div className="absolute inset-0 bg-[rgba(0,0,0,0.7)] z-[1] "></div>} */}
-				<footer className="section px-4 text-black lg:mt-40 pt-10 lg:pt-8">
+				<footer className="section px-4 text-black sm:mt-10 md:mt-0 pt-14 lg:pt-8">
 					<div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-10 mb-8 mx-auto w-full max-w-screen-2xl pt-16">
 						<div className="mb-6 md:mb-0">
 							<div>

@@ -4,16 +4,18 @@ import Footer from "../pages/Shared/Footer/Footer";
 import NavBar from "../pages/Shared/NavBar/NavBar";
 
 const MainLayout = () => {
-	const location = useLocation();
+	/* const location = useLocation();
 	const missingHeaderFooter =
 		location.pathname.includes("login") ||
-		location.pathname.includes("signup");
+		location.pathname.includes("signup"); */
 
 	return (
 		<div>
-			{missingHeaderFooter || <NavBar />}
+			{/* {missingHeaderFooter || <NavBar />} */}
+			<NavBar />
 			<Outlet />
-			{missingHeaderFooter || <Footer />}
+			{/* {missingHeaderFooter || <Footer />} */}
+			<Footer />
 		</div>
 	);
 };

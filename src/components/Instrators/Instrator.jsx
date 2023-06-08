@@ -7,18 +7,18 @@ const Instrator = ({ instrator }) => {
 		<div className="card w-full h-full bg-base-100 p-7 shadow-xl border rounded-xl">
 			<figure>
 				<img
-					className="h-52 object-contain mx-auto mb-6"
+					className="h-72 object-cover w-full mx-auto mb-6"
 					src={image}
 					alt="img"
 				/>
 			</figure>
-			<button className="absolute right-0 mr-4 mt-4 btn gap-2">
-				{name}
-			</button>
-			<div className="card-body flex flex-col items-center">
-				<h2 className="card-title font-bold">{classes[0]}</h2>
-				<p>{numClasses}</p>
-				<div className="card-actions flex justify-end">
+			
+			<div className="card-body flex flex-col">
+				<h2 className="card-title font-bold"> Name: {name}</h2>
+				<h2 className="card-title font-bold"></h2>
+				<p>Specialized For: {classes[0]}, {classes[1]}</p>
+				<p>No of Classes: {numClasses}</p>
+				<div className="card-actions flex justify-start mt-3">
 					<Link
 						to=""
 						className="bg-lime-700 py-3 px-4 text-white rounded-lg"

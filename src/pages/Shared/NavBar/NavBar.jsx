@@ -40,7 +40,6 @@ const NavBar = () => {
 				</Link>
 			</li>
 
-
 			{/* {user ? (
 				<>
 					<span>{user?.displayName}</span>
@@ -68,7 +67,7 @@ const NavBar = () => {
 
 	return (
 		<div>
-			<div className="navbar fixed z-10 bg-[#edf3f3] text-white md:px-20 w-full font-popins">
+			<div className="navbar fixed z-10 bg-[#edf3f3] text-white md:px-20 w-full font-popins shadow-md">
 				<div className="navbar-start">
 					<div className="dropdown">
 						<label tabIndex={0} className="btn btn-ghost lg:hidden">
