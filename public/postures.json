@@ -1,0 +1,47 @@
+[
+	{
+        "id": 1,
+
+		"name": "Mountain Pose",
+		"healthBenefit": "Improves posture and strengthens the legs, ankles, and core muscles.",
+		"image": "https://i.ibb.co/16Q8Wfh/Aroma-Yoga.png"
+	},
+	{
+        "id": 2,
+		"name": "Tree Pose",
+		"healthBenefit": "Improves balance, strengthens the legs and ankles, and promotes focus and concentration.",
+		"image": "https://i.ibb.co/nQghNtk/posture-5.png"
+	},
+	{
+        "id": 3,
+		"name": "Downward Facing Dog",
+		"healthBenefit": "Stretches and strengthens the entire body, improves digestion, and relieves stress and fatigue.",
+		"image": "https://i.ibb.co/16Q8Wfh/Aroma-Yoga.png"
+	},
+	{
+        "id": 4,
+		"name": "Warrior II Pose",
+		"healthBenefit": "Builds strength and stability in the legs, opens the hips and chest, and improves stamina.",
+		"image": "https://i.ibb.co/cJ7MhC4/kundalini-yoga.png"
+	},
+	{
+        "id": 5,
+		"name": "Child's Pose",
+		"healthBenefit": "Relaxes the body and mind, releases tension in the back and shoulders, and promotes deep breathing and relaxation.",
+		"image": "https://i.ibb.co/1mdD50f/Intuitive-Yoga.png"
+	},
+
+	{
+        "id": 6,
+		"name": "Seated Forward Bend",
+		"healthBenefit": "Stretches the spine, hamstrings, and shoulders, stimulates digestion, and calms the mind.",
+		"image": "https://i.ibb.co/1mdD50f/Intuitive-Yoga.png"
+	}
+]
+
+
+
+
+
+
+

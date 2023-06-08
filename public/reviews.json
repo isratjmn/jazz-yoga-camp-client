@@ -1,0 +1,88 @@
+[
+	{
+		"_id": "1",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "Emily Johnson",
+		"testimonial": "I have been practicing yoga and meditation through this website for a few months now, and it has been an incredible experience. The classes are well-structured and guided by knowledgeable instructors. The combination of yoga postures, breathing exercises, and meditation techniques has helped me find balance and inner peace. I highly recommend this website to anyone seeking a holistic approach to well-being.",
+		"rating": 5
+	},
+	{
+		"_id": "2",
+		"image": "https://i.ibb.co/5vqB6yd/client4-free-img.png",
+
+		"name": "Michael Thompson",
+		"testimonial": "I've been using this yoga and meditation website for my daily practice, and it has made a significant difference in my life. The variety of classes offered caters to different needs and preferences. The instructors are skilled and provide clear instructions, making it easy to follow along. The guided meditations have helped me develop a deeper connection with myself and reduce stress. Overall, I'm very satisfied with the website and the positive impact it has had on my overall well-being.",
+		"rating": 4.5
+	},
+	{
+		"_id": "3",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "Sarah Davis",
+		"testimonial": "This yoga and meditation website has been a true gem for me. The instructors are compassionate and create a welcoming environment for all levels of practitioners. The yoga classes have improved my strength and flexibility, while the meditation sessions have brought a sense of calm and clarity to my mind. The website design is user-friendly, and I appreciate the variety of resources available. I highly recommend this website to anyone looking to enhance their yoga and meditation practice.",
+		"rating": 4
+	},
+	{
+		"_id": "4",
+		"image": "https://i.ibb.co/NrMhtWB/client1-free-img.png",
+		"name": "Daniel Smith",
+		"testimonial": "As someone who deals with high levels of stress, I have found great relief through this yoga and meditation website. The classes and guided meditations have provided me with valuable tools to manage my stress and find moments of tranquility in my day. The instructors are knowledgeable and create a supportive atmosphere. I'm grateful for the positive impact this website has had on my mental well-being.",
+		"rating": 5
+	},
+	{
+		"_id": "5",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "Sophia Anderson",
+		"testimonial": "I have tried several yoga and meditation websites, but this one stands out from the rest. The classes are well-structured and offer a good balance of physical movement, breathwork, and mindfulness. The instructors provide clear instructions and offer modifications for different levels of experience. The guided meditations have helped me cultivate a deeper sense of relaxation and self-awareness. I highly recommend this website to anyone looking for a comprehensive and transformative yoga and meditation experience.",
+		"rating": 4.5
+	},
+	{
+		"_id": "6",
+		"image": "https://i.ibb.co/NrMhtWB/client1-free-img.png",
+		"name": "Jacob Miller",
+		"testimonial": "This yoga and meditation website has been a game-changer for me. The wide range of classes available allows me to explore different styles and techniques at my own pace. The instructors are skilled and create a peaceful environment. The meditation sessions have helped me reduce anxiety and improve my focus. The yoga classes have improved my strength and flexibility. I'm grateful for this website and the positive impact it has had on my well-being.",
+		"rating": 5
+	},
+	{
+		"_id": "7",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "Olivia Wilson",
+		"testimonial": "I stumbled upon this yoga and meditation website and it has been a wonderful discovery. The classes are well-designed and cater to different levels of experience. The instructors provide clear guidance and create a nurturing atmosphere. The meditation sessions have helped me cultivate a sense of calm and inner peace. The yoga classes have improved my physical well-being and flexibility.",
+		"rating": 4.5
+	},
+	{
+		"_id": "8",
+		"image": "https://i.ibb.co/5vqB6yd/client4-free-img.png",
+
+		"name": "Benjamin Adams",
+		"testimonial": "I have been practicing yoga for years, but this website has taken my practice to a whole new level. The variety of classes offered, from vinyasa flow to restorative yoga, allows me to tailor my practice based on my needs and mood. The instructors are skilled and provide insightful guidance. The meditation sessions have brought me a sense of clarity and centeredness.",
+		"rating": 5
+	},
+	{
+		"_id": "9",
+		"image": "https://i.ibb.co/51MHwM5/client3-free-img.png",
+		"name": "Emma Thompson",
+		"testimonial": "This yoga and meditation website has been my sanctuary during challenging times. The classes and meditations have provided me with a sense of calm and grounding. The instructors are knowledgeable and compassionate, creating a safe space for practice. The website's resources, including articles and guided practices, have deepened my understanding of yoga and meditation.",
+		"rating": 4.5
+	},
+	{
+		"_id": "10",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "James Anderson",
+		"testimonial": "I have always struggled with stress and anxiety, but this yoga and meditation website has been a lifeline for me. The classes and meditations are accessible and suitable for beginners like me. The instructors offer gentle guidance and create a soothing environment. Through consistent practice, I have noticed a significant reduction in my stress levels and an improvement in my overall well-being.",
+		"rating": 4
+	},
+	{
+		"_id": "11",
+		"image": "https://i.ibb.co/NrMhtWB/client1-free-img.png",
+		"name": "Isabella Roberts",
+		"testimonial": "This yoga and meditation website has become an integral part of my self-care routine. The classes and meditations are rejuvenating and help me find balance amidst a busy schedule. The instructors are knowledgeable and supportive, ensuring a safe and fulfilling practice. The variety of classes, from energizing flows to calming restorative sessions, cater to different needs.",
+		"rating": 5
+	},
+	{
+		"_id": "12",
+		"image": "https://i.ibb.co/6FfpdMP/client2-free-img.png",
+		"name": "David Wilson",
+		"testimonial": "I have been practicing yoga and meditation for years, and this website has become my go-to resource. The classes and meditations are thoughtfully curated, offering a holistic approach to well-being. The instructors provide detailed instructions and create a peaceful atmosphere. The guided meditations have helped me deepen my mindfulness practice and cultivate inner peace.",
+		"rating": 4.5
+	}
+]
