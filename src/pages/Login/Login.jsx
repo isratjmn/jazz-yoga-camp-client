@@ -79,7 +79,7 @@ const Login = () => {
 					<div className="flex items-center pt-4 space-x-1">
 						<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
 						<p className="px-3 text-sm dark:text-gray-400">
-							Login with social accounts
+							Login With Social Accounts
 						</p>
 						<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
 					</div>
@@ -89,9 +89,9 @@ const Login = () => {
 						<p>Continue with Google</p>
 					</div>
 					<p className="px-6 text-sm text-center text-gray-400 font-semibold">
-						Don't have an account yet?{" "}
+						Don't Have an Account Yet?{" "}
 						<Link
-							to="/register"
+							to="/signup"
 							className="hover:underline hover:text-rose-500 text-gray-600 font-bold"
 						>
 							Sign up
