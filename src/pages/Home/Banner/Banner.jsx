@@ -47,7 +47,7 @@ const Banner = () => {
 						src={bannerImg2}
 						className="rounded-xl w-full h-screen object-cover object-top"
 					/>
-					<div className="absolute rounded-xl h-full flex items-center transform -translate-y-1/2 top-1/2 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, )]">
+					<div className="absolute h-full flex items-center transform -translate-y-1/2 top-1/2 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, )]">
 						<div className=" text-white pl-44 space-y-7 w-[70%]">
 							<h2 className="mb-10 w-full font-extrabold text-7xl md:text-5xl text-emerald-700">
 								JazzYogaCamp Childrens SummerCamp institute

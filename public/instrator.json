@@ -1,0 +1,198 @@
+[
+	{
+		"image": "path/to/instructor1.jpg",
+		"name": "John Smith",
+		"email": "john.smith@example.com",
+		"numClasses": 10,
+		"classes": ["Hatha Yoga", "Vinyasa Flow"]
+	},
+	{
+		"image": "path/to/instructor2.jpg",
+		"name": "Sarah Johnson",
+		"email": "sarah.johnson@example.com",
+		"numClasses": 15,
+		"classes": ["Yin Yoga", "Mindfulness Meditation"]
+	},
+	{
+		"image": "path/to/instructor3.jpg",
+		"name": "Michael Brown",
+		"email": "michael.brown@example.com",
+		"numClasses": 8,
+		"classes": ["Kundalini Yoga", "Yoga Nidra"]
+	},
+	{
+		"image": "path/to/instructor4.jpg",
+		"name": "Emily Davis",
+		"email": "emily.davis@example.com",
+		"numClasses": 12,
+		"classes": ["Power Yoga", "Meditation for Stress Relief"]
+	},
+	{
+		"image": "path/to/instructor5.jpg",
+		"name": "Daniel Wilson",
+		"email": "daniel.wilson@example.com",
+		"numClasses": 5,
+		"classes": ["Restorative Yoga", "Breathwork Meditation"]
+	},
+	{
+		"image": "path/to/instructor6.jpg",
+		"name": "Jessica Martinez",
+		"email": "jessica.martinez@example.com",
+		"numClasses": 20,
+		"classes": ["Yoga for Back Pain Relief", "Mindful Vinyasa Flow"]
+	},
+	{
+		"image": "path/to/instructor7.jpg",
+		"name": "Andrew Thompson",
+		"email": "andrew.thompson@example.com",
+		"numClasses": 18,
+		"classes": ["Prenatal Yoga", "Yoga Nidra"]
+	},
+	{
+		"image": "path/to/instructor8.jpg",
+		"name": "Olivia Turner",
+		"email": "olivia.turner@example.com",
+		"numClasses": 6,
+		"classes": ["Yoga and Breathwork Meditation", "Yin Yoga"]
+	},
+	{
+		"image": "path/to/instructor9.jpg",
+		"name": "Matthew Rodriguez",
+		"email": "matthew.rodriguez@example.com",
+		"numClasses": 14,
+		"classes": ["Hatha Yoga", "Mindfulness Meditation"]
+	},
+	{
+		"image": "path/to/instructor10.jpg",
+		"name": "Sophia Clark",
+		"email": "sophia.clark@example.com",
+		"numClasses": 9,
+		"classes": ["Vinyasa Flow", "Yoga for Stress Relief"]
+	},
+	{
+		"image": "path/to/instructor11.jpg",
+		"name": "David Scott",
+		"email": "david.scott@example.com",
+		"numClasses": 16,
+		"classes": ["Kundalini Yoga", "Meditation and Gentle Yoga"]
+	},
+	{
+		"image": "path/to/instructor12.jpg",
+		"name": "Ava Green",
+		"email": "ava.green@example.com",
+		"numClasses": 7,
+		"classes": ["Power Yoga", "Yoga Nidra"]
+	},
+	{
+		"image": "path/to/instructor13.jpg",
+		"name": "Liam Baker",
+		"email": "liam.baker@example.com",
+		"numClasses": 11,
+		"classes": ["Restorative Yoga", "Mindful Vinyasa Flow"]
+	},
+	{
+		"image": "path/to/instructor14.jpg",
+		"name": "Emma Phillips",
+		"email": "emma.phillips@example.com",
+		"numClasses": 13,
+		"classes": ["Yoga for Back Pain Relief", "Breathwork Meditation"]
+	},
+	{
+		"image": "path/to/instructor15.jpg",
+		"name": "Noah Young",
+		"email": "noah.young@example.com",
+		"numClasses": 4,
+		"classes": ["Prenatal Yoga", "Yoga and Breathwork Meditation"]
+	},
+	{
+		"image": "path/to/instructor16.jpg",
+		"name": "Isabella Lewis",
+		"email": "isabella.lewis@example.com",
+		"numClasses": 22,
+		"classes": ["Hatha Yoga", "Yin Yoga"]
+	},
+	{
+		"image": "path/to/instructor17.jpg",
+		"name": "Jacob Turner",
+		"email": "jacob.turner@example.com",
+		"numClasses": 19,
+		"classes": ["Vinyasa Flow", "Mindfulness Meditation"]
+	},
+	{
+		"image": "path/to/instructor18.jpg",
+		"name": "Mia Harris",
+		"email": "mia.harris@example.com",
+		"numClasses": 10,
+		"classes": ["Kundalini Yoga", "Yoga for Stress Relief"]
+	},
+	{
+		"image": "path/to/instructor19.jpg",
+		"name": "Ethan Martinez",
+		"email": "ethan.martinez@example.com",
+		"numClasses": 8,
+		"classes": ["Power Yoga", "Meditation and Gentle Yoga"]
+	},
+	{
+		"image": "path/to/instructor20.jpg",
+		"name": "Amelia Wright",
+		"email": "amelia.wright@example.com",
+		"numClasses": 15,
+		"classes": ["Restorative Yoga", "Yoga Nidra"]
+	},
+	{
+		"image": "path/to/instructor21.jpg",
+		"name": "Benjamin Allen",
+		"email": "benjamin.allen@example.com",
+		"numClasses": 12,
+		"classes": ["Yin Yoga", "Mindful Vinyasa Flow"]
+	},
+	{
+		"image": "path/to/instructor22.jpg",
+		"name": "Chloe Clark",
+		"email": "chloe.clark@example.com",
+		"numClasses": 6,
+		"classes": ["Hatha Yoga", "Breathwork Meditation"]
+	},
+	{
+		"image": "path/to/instructor23.jpg",
+		"name": "Alexander Johnson",
+		"email": "alexander.johnson@example.com",
+		"numClasses": 9,
+		"classes": ["Vinyasa Flow", "Yoga and Breathwork Meditation"]
+	},
+	{
+		"image": "path/to/instructor24.jpg",
+		"name": "Grace Lee",
+		"email": "grace.lee@example.com",
+		"numClasses": 14,
+		"classes": ["Kundalini Yoga", "Yoga for Back Pain Relief"]
+	},
+	{
+		"image": "path/to/instructor25.jpg",
+		"name": "Henry Brown",
+		"email": "henry.brown@example.com",
+		"numClasses": 11,
+		"classes": ["Power Yoga", "Meditation for Stress Relief"]
+	},
+	{
+		"image": "path/to/instructor26.jpg",
+		"name": "Ella Davis",
+		"email": "ella.davis@example.com",
+		"numClasses": 7,
+		"classes": ["Restorative Yoga", "Mindfulness Meditation"]
+	},
+	{
+		"image": "path/to/instructor27.jpg",
+		"name": "William Smith",
+		"email": "william.smith@example.com",
+		"numClasses": 17,
+		"classes": ["Yin Yoga", "Yoga Nidra"]
+	},
+	{
+		"image": "path/to/instructor28.jpg",
+		"name": "Natalie Thompson",
+		"email": "natalie.thompson@example.com",
+		"numClasses": 13,
+		"classes": ["Hatha Yoga", "Mindful Vinyasa Flow"]
+	}
+]
