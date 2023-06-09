@@ -33,7 +33,7 @@ const NavBar = () => {
 			</li>
 			<li>
 				<Link
-					to="/instructor"
+					to="/instrators"
 					className="text-black lg:text-black font-semibold text-lg"
 				>
 					Instructors

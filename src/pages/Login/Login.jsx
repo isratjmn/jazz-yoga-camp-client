@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login_1.png";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import LoginSociial from "../../components/Shared/LoginSociial/LoginSociial";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 	const [disabled, setDisabled] = useState(true);
@@ -41,7 +41,10 @@ const Login = () => {
 	};
 
 	return (
-		<div>
+		<>
+			<Helmet>
+				<title>JazzYogaCamp | Login</title>
+			</Helmet>
 			<div className="flex justify-center flex-wrap items-center min-h-screen bg-[#f5f1eb]">
 				<div className="text-center sm:w-full md:w-1/2 lg:text-left">
 					<img className="w-[85%] " src={loginImg} alt="login" />
@@ -125,7 +128,7 @@ const Login = () => {
 					</p>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

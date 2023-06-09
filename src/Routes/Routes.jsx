@@ -5,6 +5,10 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 import PrivateRoutes from "./PrivateRoutes";
+import AllClassesLayout from "../Layouts/AllClassesLayout";
+import AllClasses from "../pages/AllClasses/AllClasses";
+import InstratosLayout from "../Layouts/InstratosLayout";
+import InstratorGallery from "../pages/InstratorGallery/InstratorGallery";
 
 export const router = createBrowserRouter([
 	{
@@ -23,13 +27,28 @@ export const router = createBrowserRouter([
 				path: "signup",
 				element: <SignUp />,
 			},
+			
+		],
+	},
+	{
+		path: "/classes",
+		element: <AllClassesLayout />,
+		children: [
 			{
-				path: "classes",
-				element: (
-					<PrivateRoutes>
-						<PopularClasses />
-					</PrivateRoutes>
-				),
+				path: "/classes",
+				element: <AllClasses />,
+				
+			},
+		],
+	},
+	{
+		path: "/instrators",
+		element: <InstratosLayout />,
+		children: [
+			{
+				path: "/instrators",
+				element: <InstratorGallery />,
+				
 			},
 		],
 	},

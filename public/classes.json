@@ -1,0 +1,142 @@
+[
+
+	{
+		"image": "https://i.ibb.co/pfnq76P/classes.jpg",
+		"className": "Meditation Journey",
+		"instructorName": "Jane Smith",
+		"availableSeats": 8,
+		"price": 29,
+		"enrolledStudents": 12
+	},
+	{
+		"image": "https://i.ibb.co/GWVjXqY/classes1.jpg",
+		"className": "Vinyasa Flow Immersion",
+		"instructorName": "David Johnson",
+		"availableSeats": 12,
+		"price": 80,
+		"enrolledStudents": 18
+	},
+	{
+		"image": "https://i.ibb.co/cvs7VbQ/classes5.jpg",
+		"className": "Summer Yoga Intensive",
+		"instructorName": "Sarah Davis",
+		"availableSeats": 15,
+		"price": 35,
+		"enrolledStudents": 20
+	},
+	{
+		"image": "https://i.ibb.co/f0QW5f2/classes2.jpg",
+		"className": "Mindful Yoga Retreat",
+		"instructorName": "Michael Anderson",
+		"availableSeats": 6,
+		"price": 48,
+		"enrolledStudents": 8
+	},
+	{
+		"image": "https://i.ibb.co/nbvwgP5/class12.jpg",
+		"className": "Yoga and Nature Camp",
+		"instructorName": "Emily Wilson",
+		"availableSeats": 10,
+		"price": 30,
+		"enrolledStudents": 14
+	},
+	{
+		"image": "https://i.ibb.co/M7tkRLk/classes3.jpg",
+		"className": "Zen Meditation Retreat",
+		"instructorName": "Robert Thompson",
+		"availableSeats": 8,
+		"price": 20,
+		"enrolledStudents": 10
+	},
+	{
+		"image": "https://i.ibb.co/cvs7VbQ/classes5.jpg",
+		"className": "Summer Solstice Yoga",
+		"instructorName": "Jessica Martinez",
+		"availableSeats": 12,
+		"price": 30,
+		"enrolledStudents": 16
+	},
+	{
+		"image": "https://i.ibb.co/f0QW5f2/classes2.jpg",
+		"className": "Restorative Yoga Escape",
+		"instructorName": "Daniel Lee",
+		"availableSeats": 15,
+		"price": 40,
+		"enrolledStudents": 18
+	},
+	{
+		"image": "https://i.ibb.co/rFCVt2s/classes6.jpg",
+		"className": "Yoga Adventure Camp",
+		"instructorName": "Michelle Brown",
+		"availableSeats": 6,
+		"price": 30,
+		"enrolledStudents": 9
+	},
+    {
+		"image": "https://i.ibb.co/fqRjqMD/class11.jpg",
+		"className": "Yoga Retreat",
+		"instructorName": "John Doe",
+		"availableSeats": 10,
+		"price": 30,
+		"enrolledStudents": 15
+	},
+	{
+		"image": "https://i.ibb.co/nbPcKWR/classes10.jpg",
+		"className": "Meditative Hiking Retreat",
+		"instructorName": "Alex Turner",
+		"availableSeats": 10,
+		"price": 25,
+		"enrolledStudents": 12
+	},
+	{
+		"image": "https://i.ibb.co/X44Wkkz/classes8.jpg",
+		"className": "Summer Zen Camp",
+		"instructorName": "Samantha White",
+		"availableSeats": 8,
+		"price": 35,
+		"enrolledStudents": 11
+	},
+	{
+		"image": "https://i.ibb.co/N19064W/classes7.jpg",
+		"className": "Yoga Fusion Experience",
+		"instructorName": "Emily Johnson",
+		"availableSeats": 10,
+		"price": 30,
+		"enrolledStudents": 14
+	},
+	{
+		"image": "https://i.ibb.co/bmjFc3Y/classes9.jpg",
+		"className": "Meditation and Mindfulness",
+		"instructorName": "Jacob Smith",
+		"availableSeats": 12,
+		"price": 25,
+		"enrolledStudents": 16
+	},
+	{
+		"image": "https://i.ibb.co/nbPcKWR/classes10.jpg",
+		"className": "Summer Yoga Retreat",
+		"instructorName": "Sophia Davis",
+		"availableSeats": 8,
+		"price": 35,
+		"enrolledStudents": 10
+	},
+	{
+		"image": "https://i.ibb.co/pfnq76P/classes.jpg",
+		"className": "Zen Meditation Camp",
+		"instructorName": "Oliver Thompson",
+		"availableSeats": 6,
+		"price": 30,
+		"enrolledStudents": 9
+	}
+]
+
+
+
+
+
+
+
+
+
+
+

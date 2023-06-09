@@ -6,6 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import signUp1 from "../../assets/images/signup_1.png";
 import Swal from "sweetalert2";
 import LoginSociial from "../../components/Shared/LoginSociial/LoginSociial";
+import { Helmet } from "react-helmet-async";
 
 const SignUp = () => {
 	const {
@@ -52,11 +53,13 @@ const SignUp = () => {
 				.catch((error) => console.log(error));
 		});
 	};
-
 	const password = watch("password");
 
 	return (
 		<div>
+			<Helmet>
+				<title>JazzYogaCamp | SignUp</title>
+			</Helmet>
 			<div className=" min-h-screen bg-[#f5f1eb] pb-24 md:py-14 flex-wrap">
 				<div className="flex justify-center items-center">
 					<div className="text-center sm:w-full md:w-1/2 lg:text-left">
@@ -216,7 +219,6 @@ const SignUp = () => {
 							</div>
 							<LoginSociial />
 						</form>
-
 						<p className="px-6 text-sm text-center text-gray-400 font-semibold">
 							Already Have an Account?{" "}
 							<Link

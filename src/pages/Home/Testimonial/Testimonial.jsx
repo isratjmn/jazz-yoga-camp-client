@@ -50,7 +50,7 @@ const Testimonial = () => {
 			>
 				{reviews.map((review) => (
 					<SwiperSlide key={review._id}>
-						<div className="card w-[40%] shadow-xl border mt-16 mx-auto h-[300px] my-14">
+						<div className="card w-[40%] shadow-xl border max-w-3xl mt-16 mx-auto h-[300px] my-14">
 							<div className="card-body">
 								<p className="my-3">{review.testimonial}</p>
 								<div className="flex align-middle gap-3 items-center">

@@ -5,7 +5,7 @@ const SectionHeading = ({ title, heading, center }) => {
 	return (
 		<div className={center ? "text-center" : "text-start"}>
 			<img
-				className="w-40 mx-auto mt-24"
+				className="w-40 mx-auto mt-20"
 				src={headingBgImg}
 				alt="bgImg"
 			/>
