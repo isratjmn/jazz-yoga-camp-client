@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/images/login_1.png";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import LoginSociial from "../../components/Shared/LoginSociial/LoginSociial";
 
 const Login = () => {
+	const [disabled, setDisabled] = useState(true);
+
+	const { signIn } = useContext(AuthContext);
+	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/";
+
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm();
+
+	const onSubmit = (data) => {
+		console.log(data);
+		signIn(data.email, data.password).then((result) => {
+			const user = result.user;
+			console.log(user);
+			Swal.fire({
+				title: "User Login Successful",
+				showClass: {
+					popup: "animate__animated animate__fadeInDown",
+				},
+				hideClass: {
+					popup: "animate__animated animate__fadeOutUp",
+				},
+			});
+			navigate(from, { replace: true });
+		});
+	};
+
 	return (
 		<div>
 			<div className="flex justify-center flex-wrap items-center min-h-screen bg-[#f5f1eb]">
@@ -14,25 +50,28 @@ const Login = () => {
 					<div className="mb-8 text-center">
 						<h1 className="my-3 text-4xl font-bold">Log In</h1>
 						<p className="text-sm text-gray-400">
-							Sign in to access your account
+							Sign in to Access the Account
 						</p>
 					</div>
-					<form className="space-y-6 ng-untouched ng-pristine ng-valid">
+					<form
+						onSubmit={handleSubmit(onSubmit)}
+						className="space-y-6 ng-untouched ng-pristine ng-valid"
+					>
 						<div className="space-y-4">
 							<div>
 								<label
 									htmlFor="email"
 									className="block mb-2 text-sm"
 								>
-									Email address
+									Email Address
 								</label>
 								<input
 									type="email"
 									name="email"
-									id="email"
+									{...register("email")}
 									required
 									placeholder="Enter Your Email Here"
-									className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
+									className="w-full px-3 py-2 border rounded-md border-gray-30 bg-gray-200 text-gray-900"
 									data-temp-mail-org="0"
 								/>
 							</div>
@@ -48,55 +87,41 @@ const Login = () => {
 								<input
 									type="password"
 									name="password"
+									{...register("password")}
 									required
 									placeholder="*******"
 									className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
 								/>
 							</div>
+							{/* <div>
+								<label>
+									<input
+										type="checkbox"
+										{...register("showPassword")}
+									/>
+									Show Password
+								</label>
+							</div> */}
 						</div>
 
 						<div>
-							<button
+							<input
+								disabled={false}
 								type="submit"
-								className="bg-rose-500 w-full rounded-md py-3 text-white"
-							>
-								{/* {loading ? (
-								<TbFidgetSpinner
-									className="m-auto animate-spin"
-									size={24}
-								/>
-							) : (
-								"Continue"
-							)} */}
-							</button>
+								value="Login"
+								className="bg-lime-600 w-full rounded-md py-3 text-white font-semibold"
+							/>
 						</div>
+						<LoginSociial />
 					</form>
-					<div className="space-y-1">
-						<button className="text-xs hover:underline hover:text-rose-500 text-gray-400 font-semibold mt-2">
-							Forgot password?
-						</button>
-					</div>
-					<div className="flex items-center pt-4 space-x-1">
-						<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-						<p className="px-3 text-sm dark:text-gray-400">
-							Login With Social Accounts
-						</p>
-						<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-					</div>
-					<div className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer">
-						<FcGoogle size={32} />
-
-						<p>Continue with Google</p>
-					</div>
 					<p className="px-6 text-sm text-center text-gray-400 font-semibold">
 						Don't Have an Account Yet?{" "}
 						<Link
 							to="/signup"
 							className="hover:underline hover:text-rose-500 text-gray-600 font-bold"
 						>
-							Sign up
+							Sign Up
 						</Link>
-						.
 					</p>
 				</div>
 			</div>

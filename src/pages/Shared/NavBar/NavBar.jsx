@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineShoppingCart } from "react-icons/hi";
+import avatarImg from '../../../assets/images/heading-img/avatar.png'
 import logo2 from "../../../assets/images/logo2.png";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavBar = () => {
+	const { user, logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+		logOut()
+			.then(() => {})
+			.catch((error) => console.log(error));
+	};
+
 	const navItems = (
 		<>
 			<li>
@@ -12,15 +21,6 @@ const NavBar = () => {
 					className="text-black lg:text-black font-semibold text-lg"
 				>
 					Home
-				</Link>
-			</li>
-
-			<li>
-				<Link
-					to="/instructor"
-					className="text-black lg:text-black font-semibold text-lg"
-				>
-					Instructors
 				</Link>
 			</li>
 			<li>
@@ -33,6 +33,15 @@ const NavBar = () => {
 			</li>
 			<li>
 				<Link
+					to="/instructor"
+					className="text-black lg:text-black font-semibold text-lg"
+				>
+					Instructors
+				</Link>
+			</li>
+
+			<li>
+				<Link
 					to="/dashboard"
 					className="text-black lg:text-black font-semibold text-lg"
 				>
@@ -40,12 +49,27 @@ const NavBar = () => {
 				</Link>
 			</li>
 
-			{/* {user ? (
+			{user ? (
 				<>
-					<span>{user?.displayName}</span>
+					<div className="flex items-center">
+						{user.photoURL ? (
+							<img
+								src={user?.photoURL}
+								alt={user.displayName}
+								className="h-10 w-10 rounded-full mr-2"
+							/>
+						) : (
+							<img
+								src={avatarImg}
+								alt="Default Avatar"
+								className="h-10 w-10 rounded-full mr-2"
+							/>
+						)}
+						
+					</div>
 					<button
 						onClick={handleLogOut}
-						className="btn btn-active btn-ghost"
+						className="btn btn-main text-white"
 					>
 						LogOut
 					</button>
@@ -55,13 +79,13 @@ const NavBar = () => {
 					<li>
 						<Link
 							to="/login"
-							className="text-black lg:text-white font-semibold text-lg"
+							className=" btn btn-login font-semibold text-sm"
 						>
 							Login
 						</Link>
 					</li>
 				</>
-			)} */}
+			)}
 		</>
 	);
 
@@ -112,9 +136,11 @@ const NavBar = () => {
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">{navItems}</ul>
 				</div>
-				<div className="navbar-end">
-					<Link to ='/login' className="btn btn-main">Login</Link>
-				</div>
+				{/* <div className="navbar-end">
+					<Link to="/login" className="btn btn-main">
+						Login
+					</Link>
+				</div> */}
 			</div>
 		</div>
 	);

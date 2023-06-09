@@ -12,3 +12,17 @@
 /* .main-container {
     @apply mx-auto w-[90%] md:w-[60%] lg:w-[75%] max-w-[1400px]
 } */
+
+
+.btn-login {
+    background-color: #79A84A;
+    padding: 13px 28px;
+    font-weight: 700;
+    color: white;
+
+}
+.btn-login:hover {
+    background-color: #91B66D;
+    
+
+}

@@ -4,56 +4,56 @@
 		"name": "John Smith",
 		"email": "john.smith@example.com",
 		"numClasses": 10,
-		"classes": ["Hatha Yoga", "Vinyasa Flow"]
+		"classes": "Hatha Yoga"
 	},
 	{
 		"image": "https://i.ibb.co/q1kPwnD/instrator-6.jpg",
 		"name": "Sarah Johnson",
 		"email": "sarah.johnson@example.com",
 		"numClasses": 15,
-		"classes": ["Yin Yoga", "Mindfulness Meditation"]
+		"classes": "Yin Yoga"
 	},
 	{
 		"image": "https://i.ibb.co/2kqrgG6/instrator-7.jpg",
 		"name": "Michael Brown",
 		"email": "michael.brown@example.com",
 		"numClasses": 8,
-		"classes": ["Kundalini Yoga", "Yoga Nidra"]
+		"classes": "Mindfulness Meditation"
 	},
 	{
-		"image": "https://i.ibb.co/cbYpW2k/yoga-instructor-3.jpg",
+		"image": "https://i.ibb.co/GsR8k2x/instrator-14.jpg",
 		"name": "Emily Davis",
 		"email": "emily.davis@example.com",
 		"numClasses": 12,
-		"classes": ["Power Yoga", "Meditation for Stress Relief"]
+		"classes": "Breathwork Meditation"
 	},
 	{
 		"image": "https://i.ibb.co/dbbG6Rn/instrator-5.jpg",
 		"name": "Daniel Wilson",
 		"email": "daniel.wilson@example.com",
 		"numClasses": 5,
-		"classes": ["Restorative Yoga", "Breathwork Meditation"]
+		"classes": "Restorative Yoga"
 	},
 	{
 		"image": "https://i.ibb.co/BP7cN8q/yoga-instructor-2.jpg",
 		"name": "Jessica Martinez",
 		"email": "jessica.martinez@example.com",
 		"numClasses": 20,
-		"classes": ["Yoga for Back Pain Relief", "Mindful Vinyasa Flow"]
+		"classes": "Yoga for Back Pain Relief"
 	},
 	{
 		"image": "https://i.ibb.co/86VqTqq/yoga-studio-instructor-1.jpg",
 		"name": "Andrew Thompson",
 		"email": "andrew.thompson@example.com",
 		"numClasses": 18,
-		"classes": ["Prenatal Yoga", "Yoga Nidra"]
+		"classes": "Prenatal Yoga"
 	},
 	{
-		"image": "https://i.ibb.co/WG1MqVT/instrator-12.jpg",
+		"image": "https://i.ibb.co/J7HV5YC/instrator-15.jpg",
 		"name": "Noah Young",
 		"email": "noah.young@example.com",
 		"numClasses": 4,
-		"classes": ["Prenatal Yoga", "Yoga and Breathwork Meditation"]
+		"classes": "Vinyasa Flow"
 	},
 
 	{
@@ -61,7 +61,7 @@
 		"name": "Mia Harris",
 		"email": "mia.harris@example.com",
 		"numClasses": 10,
-		"classes": ["Kundalini Yoga", "Yoga for Stress Relief"]
+		"classes": "Yoga for Stress Relief"
 	},
 
 	{
@@ -69,23 +69,20 @@
 		"name": "Alexander Johnson",
 		"email": "alexander.johnson@example.com",
 		"numClasses": 9,
-		"classes": ["Vinyasa Flow", "Yoga and Breathwork Meditation"]
+		"classes": "Yoga and Breathwork Meditation"
 	},
 	{
 		"image": "https://i.ibb.co/3S99Yrt/instrator-11.jpg",
 		"name": "Henry Brown",
 		"email": "henry.brown@example.com",
 		"numClasses": 11,
-		"classes": ["Power Yoga", "Meditation for Stress Relief"]
+		"classes": "Meditation for Stress Relief"
+	},
+	{
+		"image": "https://i.ibb.co/5Fh815X/instrator-13.jpg",
+		"name": "Michael Brown",
+		"email": "michael.brown@example.com",
+		"numClasses": 8,
+		"classes": "Kundalini Yoga"
 	}
 ]
-
-
-
-
-
-
-
-
-
-

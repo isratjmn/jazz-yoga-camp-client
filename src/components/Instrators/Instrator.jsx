@@ -15,9 +15,9 @@ const Instrator = ({ instrator }) => {
 			
 			<div className="card-body flex flex-col">
 				<h2 className="card-title font-bold"> Name: {name}</h2>
-				<h2 className="card-title font-bold"></h2>
-				<p>Specialized For: {classes[0]}, {classes[1]}</p>
-				<p>No of Classes: {numClasses}</p>
+				<h2 className="font-bold"></h2>
+				<p className="font-semibold">Specialized For: {classes}</p>
+				<p className="font-semibold">No of Classes: {numClasses} nos</p>
 				<div className="card-actions flex justify-start mt-3">
 					<Link
 						to=""
