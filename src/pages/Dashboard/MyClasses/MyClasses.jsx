@@ -3,7 +3,6 @@ import { FcApproval } from "react-icons/fc";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 const MyClasses = () => {
 	const [classes, setClasses] = useState([]);
@@ -11,7 +10,7 @@ const MyClasses = () => {
 		const fetchClasses = async () => {
 			try {
 				const response = await axios.get(
-					"https://jazz-yoga-camp-server.vercel.app/classes"
+					"http://localhost:5000/classes"
 				);
 				setClasses(response.data);
 			} catch (error) {
@@ -48,11 +47,7 @@ const MyClasses = () => {
 							<tr key={classItem._id}>
 								<td>{index + 1}</td>
 								<td>
-									<div className="avatar flex items-center space-x-3">
-										<div className="mask mask-squircle w-12 h-12">
-											<img alt={classItem.image} />
-										</div>
-									</div>
+									<img className="w-28 rounded-lg" src={classItem.image} alt="img" />
 								</td>
 								<td className="text-base font-semibold">
 									{classItem.className}

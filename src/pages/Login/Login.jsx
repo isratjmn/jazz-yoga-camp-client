@@ -51,10 +51,10 @@ const Login = () => {
 				<title>JazzYogaCamp | Login</title>
 			</Helmet>
 			<div className="flex justify-center flex-wrap items-center min-h-screen bg-[#f5f1eb]">
-				<div className="text-center sm:w-full md:w-1/2 lg:text-left">
-					<img className="w-[85%] " src={loginImg} alt="login" />
+				<div className="text-center mt-12 sm:w-full md:w-1/2 lg:text-left">
+					<img className="w-[90%] " src={loginImg} alt="login" />
 				</div>
-				<div className="card sm:w-full md:w-1/2 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#edf3f3] border text-gray-900">
+				<div className="card sm:w-full md:w-1/2 flex flex-col max-w-md p-6 mb-6 rounded-md sm:p-10 bg-[#edf3f3] border text-gray-900">
 					<div className="mb-8 text-center">
 						<h1 className="my-3 text-4xl font-bold text-lime-700">Log In</h1>
 						<p className="text-sm text-gray-400">

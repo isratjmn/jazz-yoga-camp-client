@@ -28,7 +28,7 @@ const SignUp = () => {
 			updateUserProfile(data.name, data.photoURL)
 				.then(() => {
 					const saveUser = { name: data.name, email: data.email };
-					fetch("https://jazz-yoga-camp-server.vercel.app/users", {
+					fetch("http://localhost:5000/users", {
 						method: "POST",
 						headers: {
 							"content-type": "application/json",
@@ -61,15 +61,15 @@ const SignUp = () => {
 				<title>JazzYogaCamp | SignUp</title>
 			</Helmet>
 			<div className=" min-h-screen bg-[#f5f1eb] pb-24 md:py-14 flex-wrap">
-				<div className="flex justify-center items-center">
-					<div className="text-center sm:w-full md:w-1/2 lg:text-left">
+				<div className="flex flex-wrap justify-center items-center">
+					<div className="text-center w-full mt-12 md:w-1/2 lg:text-left">
 						<img
 							className="w-[100%] md:w-[85%]  mx-auto"
 							src={signUp1}
 							alt="signUp"
 						/>
 					</div>
-					<div className="flex flex-col max-w-lg mt-32 mb-8 md:w-1/2 p-6 rounded-md sm:p-10 bg-[#edf3f3] border shadow-lg text-gray-900">
+					<div className="flex flex-col  w-full max-w-lg md:mt-32 mb-8 md:w-1/2 p-6 rounded-md sm:p-10 bg-[#edf3f3] border shadow-lg text-gray-900">
 						<div className="mb-8 text-center">
 							<h1 className="mb-3 text-4xl font-bold text-lime-700">
 								Sign Up

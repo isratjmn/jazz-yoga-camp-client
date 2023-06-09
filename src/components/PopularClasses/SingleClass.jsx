@@ -1,25 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const SingleClass = ({ singleClass }) => {
 	const [scrollY, setScrollY] = useState(0);
-
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrollY(window.scrollY);
 		};
-
 		window.addEventListener("scroll", handleScroll);
-
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
-	const scale = 0.5 + scrollY / 5500;
+	const scale = 0.5 + scrollY / 11500;
 	const opacity = scrollY / 1000;
 	const {
 		_id,
@@ -32,7 +28,7 @@ const SingleClass = ({ singleClass }) => {
 	} = singleClass;
 	return (
 		<>
-			<div className="card w-full h-full bg-base-100 p-4 shadow-xl border rounded-xl">
+			<div className="card w-[90%] md:w-full h-full bg-base-100 p-4 shadow-xl mx-auto border rounded-xl">
 				<motion.div
 					style={{
 						scale,
@@ -59,7 +55,7 @@ const SingleClass = ({ singleClass }) => {
 					<p className="font-semibold text-lime-600">
 						Available Seats: {availableSeats} nos
 					</p>
-					<p className="font-bold ">Price: {price} nos</p>
+					<p className="font-bold ">Price: {price}</p>
 				</div>
 			</div>
 		</>

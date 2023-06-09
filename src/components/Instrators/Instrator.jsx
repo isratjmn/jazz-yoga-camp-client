@@ -9,7 +9,7 @@ const Instrator = ({ instrator }) => {
 	const { image, name, email, numClasses, classes } = instrator;
 	return (
 		<motion.div style={{ opacity, scale }}>
-			<div className="card w-full bg-base-100 p-0 shadow-xl border rounded-xl">
+			<div className="card mx-auto w-full bg-base-100 p-0 shadow-xl border rounded-xl">
 				<figure>
 					<img
 						className="h-72 object-cover w-full mx-auto mb-6"
@@ -17,7 +17,6 @@ const Instrator = ({ instrator }) => {
 						alt="img"
 					/>
 				</figure>
-
 				<div className="card-body flex flex-col">
 					<h2 className="card-title font-bold"> Name: {name}</h2>
 					<h2 className="font-bold"></h2>

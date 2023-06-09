@@ -17,7 +17,7 @@ const Home = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Home</title>
 			</Helmet>
-			<div>
+			<div className="overflow-x-hidden">
 				<Banner />
 				<Category />
 				<PopularClasses />

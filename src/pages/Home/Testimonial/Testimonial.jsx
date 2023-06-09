@@ -19,7 +19,7 @@ const Testimonial = () => {
 	const [reviews, setReviews] = useState([]);
 
 	useEffect(() => {
-		fetch("https://jazz-yoga-camp-server.vercel.app/reviews")
+		fetch("http://localhost:5000/reviews")
 			.then((res) => res.json())
 			.then((data) => setReviews(data));
 	}, []);
@@ -50,7 +50,7 @@ const Testimonial = () => {
 			>
 				{reviews.map((review) => (
 					<SwiperSlide key={review._id}>
-						<div className="card md:w-[40%] shadow-xl border md:max-w-3xl mt-16 mx-auto h-[470px] lg:h-[300px] my-14">
+						<div className="card w-[95%] md:w-[40%] shadow-xl border md:max-w-3xl mt-16 mx-auto h-[470px] lg:h-[300px] my-14">
 							<div className="card-body">
 								<p className="my-3">{review.testimonial}</p>
 								<div className="flex align-middle gap-3 items-center">

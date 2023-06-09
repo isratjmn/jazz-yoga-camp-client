@@ -8,7 +8,6 @@ import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 const SelectedClass = () => {
 	const [cart, refetch] = UseCart();
 	const total = cart.reduce((sum, item) => item.price + sum, 0);
-
 	const handleDelete = (item) => {
 		Swal.fire({
 			title: "Are you sure?",
@@ -20,7 +19,7 @@ const SelectedClass = () => {
 			confirmButtonText: "Yes, Delete It!",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				fetch(`https://jazz-yoga-camp-server.vercel.app/carts/${item._id}`, {
+				fetch(`http://localhost:5000/carts/${item._id}`, {
 					method: "DELETE",
 				})
 					.then((res) => res.json())
@@ -77,7 +76,6 @@ const SelectedClass = () => {
 							{cart.map((item, index) => (
 								<tr key={item._id}>
 									<td>{index + 1}</td>
-
 									<td>
 										<div className="avatar flex items-center space-x-3">
 											<div className="mask mask-squircle w-12 h-12">
@@ -122,7 +120,6 @@ const SelectedClass = () => {
 				<h2 className="text-lime-700">
 					Total Selected Classes: {cart.length}
 				</h2>
-
 				<h2 className="text-lime-700">Total Price: ${total}</h2>
 			</div>
 		</div>
