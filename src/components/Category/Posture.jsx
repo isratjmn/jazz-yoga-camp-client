@@ -15,7 +15,7 @@ const Posture = ({ posture }) => {
 					duration: 0.3,
 				}}
 			>
-				<div className="w-[90%] lg:w-full">
+				<div className="w-[90%] lg:w-full mx-auto">
 					<div className="flex flex-col p-4 rounded-lg">
 						<img className="w-24 mx-auto" src={image} alt="image" />
 						<h2 className="text-2xl font-bold mb-2 mx-auto">

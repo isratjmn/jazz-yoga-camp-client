@@ -14,7 +14,7 @@ const AllClasses = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/classes")
+		fetch("https://jazz-yoga-camp-server.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
@@ -31,7 +31,7 @@ const AllClasses = () => {
 				price: item.price,
 				email: user.email,
 			};
-			fetch("http://localhost:5000/carts", {
+			fetch("https://jazz-yoga-camp-server.vercel.app/carts", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",

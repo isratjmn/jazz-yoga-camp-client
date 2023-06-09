@@ -18,6 +18,7 @@ import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import AdminRoute from "./AdminRoute";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import Payment from "../components/Payment/Payment";
 
 export const router = createBrowserRouter([
 	{
@@ -96,6 +97,10 @@ export const router = createBrowserRouter([
 			{
 				path: "history",
 				element: <PaymentHistory />,
+			},
+			{
+				path: "payment",
+				element: <Payment></Payment>,
 			},
 		],
 	},

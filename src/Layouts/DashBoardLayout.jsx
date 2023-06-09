@@ -171,7 +171,7 @@ const DashBoardLayout = () => {
 			</div>
 			{/* Toggle Button - Visible for mobile */}
 			<button
-				className="md:hidden btn btn-outline btn-sm btn-error fixed bottom-50 font-bold left-60 transform -translateX(-50%) transition duration-300 text-xs"
+				className="lg:hidden btn btn-md btn-error text-white bg-[#79a84a] fixed bottom-50 font-bold left-60 transform -translateX(-50%) transition duration-300 text-sm rounded-md"
 				onClick={toggleDrawer}
 			>
 				{isLoading ? "Loading..." : "Show"}

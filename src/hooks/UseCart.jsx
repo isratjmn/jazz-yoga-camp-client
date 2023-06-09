@@ -10,7 +10,7 @@ const UseCart = () => {
 		enabled: !loading,
 		queryFn: async () => {
 			const res = await fetch(
-				`http://localhost:5000/carts?email=${user?.email}`,
+				`https://jazz-yoga-camp-server.vercel.app/carts?email=${user?.email}`,
 				{
 					headers: {
 						authorization: `bearer ${token}`,
