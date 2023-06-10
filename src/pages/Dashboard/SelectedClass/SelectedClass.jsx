@@ -47,7 +47,7 @@ const SelectedClass = () => {
 			<div className="mt-20 mx-auto text-center">
 				<button class="btn btn-main">Payment</button>
 			</div>
-			<div className="overflow-x-auto w-[88%] mt-6 mx-auto border rounded-md">
+			<div className="overflow-x-auto w-[88%] mt-6 mx-auto rounded-md">
 				<table className="table">
 					{/* head */}
 					<thead>

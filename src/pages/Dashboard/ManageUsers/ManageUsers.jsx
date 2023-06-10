@@ -12,7 +12,6 @@ const ManageUsers = () => {
 
 	const handleMakeAdmin = (user) => {
 		const updatedUser = { ...user, role: "admin" };
-
 		fetch(`http://localhost:5000/users/admin/${user._id}`, {
 			method: "PATCH",
 			headers: {
@@ -78,7 +77,7 @@ const ManageUsers = () => {
 				</h2>
 				<h2 className="text-lime-700">Total Price: $123</h2>
 			</div>
-			<div className="overflow-x-auto w-[88%] mt-2 mx-auto mb-28 border rounded-md">
+			<div className="overflow-x-auto w-[88%] mt-2 mx-auto mb-28  rounded-md">
 				<table className="table">
 					{/* head */}
 					<thead>
@@ -111,7 +110,7 @@ const ManageUsers = () => {
 										disabled={user.role === "admin"}
 									>
 										{user.role === "admin" ? (
-											<FaUsersCog className="text-3xl" />
+											<FaUsersCog className="text-xl" />
 										) : (
 											"Make Admin"
 										)}
@@ -124,7 +123,7 @@ const ManageUsers = () => {
 										disabled={user.role === "instructor"}
 									>
 										{user.role === "instructor" ? (
-											<FaUserShield className="text-3xl" />
+											<FaUserShield className="text-xl" />
 										) : (
 											"Make Instructor"
 										)}
