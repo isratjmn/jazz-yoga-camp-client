@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 	const [disabled, setDisabled] = useState(true);
+	const [showPassword, setShowPassword] = useState(false);
 
 	const { signIn } = useContext(AuthContext);
 	const navigate = useNavigate();
@@ -40,6 +41,10 @@ const Login = () => {
 		});
 	};
 
+	const toggleShowPassword = () => {
+		setShowPassword(!showPassword);
+	};
+
 	return (
 		<>
 			<Helmet>
@@ -51,7 +56,7 @@ const Login = () => {
 				</div>
 				<div className="card sm:w-full md:w-1/2 flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#edf3f3] border text-gray-900">
 					<div className="mb-8 text-center">
-						<h1 className="my-3 text-4xl font-bold">Log In</h1>
+						<h1 className="my-3 text-4xl font-bold text-lime-700">Log In</h1>
 						<p className="text-sm text-gray-400">
 							Sign in to Access the Account
 						</p>
@@ -78,7 +83,7 @@ const Login = () => {
 									data-temp-mail-org="0"
 								/>
 							</div>
-							<div>
+							<div className="relative">
 								<div className="flex justify-between">
 									<label
 										htmlFor="password"
@@ -86,9 +91,58 @@ const Login = () => {
 									>
 										Password
 									</label>
+									<button
+										type="button"
+										className="focus:outline-none absolute top-2/3 right-4 transform -translate-y-1/2"
+										onClick={toggleShowPassword}
+									>
+										{showPassword ? (
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												className="h-6 w-6 text-gray-500"
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke="currentColor"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+												/>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M4.93 4.93a8 8 0 0111.14 0M1.27 1.27L4 4m16 16l-2.73-2.73m-1.41-1.41L16 16M4 4l2.73 2.73m1.41 1.41L8 8"
+												/>
+											</svg>
+										) : (
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												className="h-6 w-6 text-gray-500"
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke="currentColor"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+												/>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={2}
+													d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+												/>
+											</svg>
+										)}
+									</button>
 								</div>
 								<input
-									type="password"
+									type={showPassword ? "text" : "password"}
 									name="password"
 									{...register("password")}
 									required
@@ -96,15 +150,6 @@ const Login = () => {
 									className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
 								/>
 							</div>
-							{/* <div>
-								<label>
-									<input
-										type="checkbox"
-										{...register("showPassword")}
-									/>
-									Show Password
-								</label>
-							</div> */}
 						</div>
 
 						<div>

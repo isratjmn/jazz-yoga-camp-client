@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const SingleClass = ({ singleClass }) => {
 	const {
+		_id,
 		image,
 		className,
 		instructorName,

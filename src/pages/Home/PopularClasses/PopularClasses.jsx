@@ -14,6 +14,7 @@ const PopularClasses = () => {
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
+	
 	return (
 		<section>
 			<SectionHeading

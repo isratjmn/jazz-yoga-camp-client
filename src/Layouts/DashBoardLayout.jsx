@@ -1,0 +1,328 @@
+import React from "react";
+import Drawer from "react-modern-drawer";
+import { Outlet, NavLink, Link } from "react-router-dom";
+import "react-modern-drawer/dist/index.css";
+import { FaShoppingBag, FaIdCardAlt, FaUsers } from "react-icons/fa";
+import logo2 from "../assets/images/banner/logo2.png";
+import { BiUserPin } from "react-icons/bi";
+import { RiFileUserFill, RiFolderUserFill } from "react-icons/ri";
+import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
+// import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
+import { FaCalendarAlt, FaWallet } from "react-icons/fa";
+import UseCart from "../hooks/UseCart";
+
+const DashBoardLayout = () => {
+	const [cart] = UseCart();
+
+	const isAdmin = true;
+
+	// const [isAdmin] = useAdmin();
+	const [isOpen, setIsOpen] = React.useState(false);
+	const [isLoading, setIsLoading] = React.useState(false);
+
+	const toggleDrawer = () => {
+		setIsLoading(true);
+		setTimeout(() => {
+			setIsOpen((prevState) => !prevState);
+			setIsLoading(false);
+		}, 500); // Simulating a delay for demonstration purposes
+	};
+
+	return (
+		<div className="flex">
+			{/* Sidebar - Fixed for desktop */}
+			<div className="hidden md:block w-64 drawer bg-[#edf3f3]">
+				<div className="p-6">
+					<Link
+						to="/"
+						className="font-extrabold text-lg text-emerald-700"
+					>
+						<img className="ml-2" src={logo2} width="120" alt="" />
+						<p className="-mt-3">
+							JazzYoga
+							<span className="text-black">Camp</span>
+						</p>
+					</Link>
+					{isAdmin ? (
+						<>
+							<ul className="mt-10">
+								<li>
+									<NavLink
+										className="text-black pt-2 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/adminhome"
+									>
+										<HiHome className="text-xl text-lime-700" />{" "}
+										Admin Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/manageclasses"
+									>
+										<FaIdCardAlt className="text-xl text-lime-700" />{" "}
+										Manage Classes
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/manageusers"
+									>
+										<FaUsers className="text-xl text-lime-700" />{" "}
+										Manage Users(All Users)
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					) : isInstructor ? (
+						<>
+							<ul>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/instructorhome"
+									>
+										<HiHome className="text-xl text-lime-700" />{" "}
+										Instructor Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/"
+									>
+										<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
+										Add Classes
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/"
+									>
+										<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
+										My Classes
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					) : (
+						<>
+							<ul>
+								<li>
+									<NavLink
+										to="/dashboard/studenthome"
+										className="text-black pt-12 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<HiHome className="text-xl text-lime-700" />
+										Student Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/selectedclass"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<BiUserPin className="text-xl text-lime-700" />
+										Selected Classes{" "}
+										<div className="badge bg-lime-700 text-white p-3 rounded-lg">
+											+{cart?.length || 0}
+										</div>
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/reservations"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<FaCalendarAlt className="text-xl text-lime-700"></FaCalendarAlt>{" "}
+										Enrolled Class
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/history"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<FaWallet className="text-xl text-lime-700"></FaWallet>{" "}
+										Payment History
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					)}
+
+					<ul>
+						<div className="flex flex-col w-full">
+							<div className="divider"></div>
+						</div>
+
+						<li>
+							<NavLink
+								to="/"
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+							>
+								<HiHome className="text-xl text-lime-700" />{" "}
+								Home
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								to="/classes"
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+							>
+								<RiFolderUserFill className="text-xl text-lime-700" />{" "}
+								Classes
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								to="/instrators"
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+							>
+								<RiFileUserFill className="text-xl text-lime-700" />{" "}
+								Instractors
+							</NavLink>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			{/* Content */}
+			<div className="flex-grow">
+				<Outlet />
+			</div>
+
+			{/* Toggle Button - Visible for mobile */}
+			<button
+				className="md:hidden btn btn-outline btn-error fixed bottom-30 right-6 transform transition duration-300"
+				onClick={toggleDrawer}
+			>
+				{isLoading ? "Loading..." : "Show"}
+			</button>
+
+			{/* Drawer - Visible for mobile */}
+			<Drawer
+				open={isOpen}
+				onClose={toggleDrawer}
+				direction="left"
+				className="drawer-content md:hidden"
+			>
+				<div className="p-4">
+					{isAdmin ? (
+						<>
+							<ul className="mt-10">
+								<li>
+									<NavLink
+										className="text-black pt-2 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/adminhome"
+									>
+										<HiHome className="text-xl text-lime-700" />{" "}
+										Admin Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/manageclasses"
+									>
+										<FaIdCardAlt className="text-xl text-lime-700" />{" "}
+										Manage Classes
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/manageusers"
+									>
+										<FaUsers className="text-xl text-lime-700" />{" "}
+										Manage Users(All Users)
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					) : isInstructor ? (
+						<>
+							<ul>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/instructorhome"
+									>
+										<HiHome className="text-xl text-lime-700" />{" "}
+										Instructor Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/"
+									>
+										<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
+										Add Classes
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+										to="/dashboard/"
+									>
+										<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
+										My Classes
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					) : (
+						<>
+							<ul>
+								<li>
+									<NavLink
+										to="/dashboard/studenthome"
+										className="text-black pt-12 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<HiHome className="text-xl text-lime-700" />
+										Student Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/selectedclass"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<BiUserPin className="text-xl text-lime-700" />
+										Selected Classes{" "}
+										<div className="badge bg-lime-700 text-white p-3 rounded-lg">
+											+{cart?.length || 0}
+										</div>
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/reservations"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<FaCalendarAlt className="text-xl text-lime-700"></FaCalendarAlt>{" "}
+										Enrolled Class
+									</NavLink>
+								</li>
+								<li>
+									<NavLink
+										to="/dashboard/history"
+										className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+									>
+										<FaWallet className="text-xl text-lime-700"></FaWallet>{" "}
+										Payment History
+									</NavLink>
+								</li>
+							</ul>
+						</>
+					)}
+				</div>
+			</Drawer>
+		</div>
+	);
+};
+
+export default DashBoardLayout;

@@ -9,6 +9,9 @@ import AllClassesLayout from "../Layouts/AllClassesLayout";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import InstratosLayout from "../Layouts/InstratosLayout";
 import InstratorGallery from "../pages/InstratorGallery/InstratorGallery";
+import DashBoardLayout from "../Layouts/DashBoardLayout";
+import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 
 export const router = createBrowserRouter([
 	{
@@ -27,7 +30,6 @@ export const router = createBrowserRouter([
 				path: "signup",
 				element: <SignUp />,
 			},
-			
 		],
 	},
 	{
@@ -37,7 +39,6 @@ export const router = createBrowserRouter([
 			{
 				path: "/classes",
 				element: <AllClasses />,
-				
 			},
 		],
 	},
@@ -48,7 +49,33 @@ export const router = createBrowserRouter([
 			{
 				path: "/instrators",
 				element: <InstratorGallery />,
-				
+			},
+		],
+	},
+	{
+		path: "dashboard",
+		element: (
+			<PrivateRoutes>
+				<DashBoardLayout />
+			</PrivateRoutes>
+		),
+		children: [
+			{
+				path: "selectedclass",
+				element: <SelectedClass />,
+			},
+			/* {
+				path: "allusers",
+				element: <Allusers />,
+			},
+
+			{
+				path: "addaclass",
+				element: <AddClass />,
+			}, */
+			{
+				path: "manageusers",
+				element: <ManageUsers />,
 			},
 		],
 	},

@@ -34,15 +34,7 @@ const LoginSociial = () => {
 	};
 	return (
 		<div>
-			{/* <div className="divider"></div>
-			<div className="w-full text-center my-6">
-				<button
-					onClick={handleGoogleSignIn}
-					className="btn btn-circle btn-outline"
-				>
-					<FcGoogle className="text-2xl" />
-				</button>
-			</div> */}
+
 			<div className="flex items-center pt-1 space-x-1">
 				<div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
 				<p className="px-3 text-sm dark:text-gray-400">

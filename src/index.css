@@ -2,27 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .btn-main {
-    background-color: #79A84A;
-    padding: 0 25px;
-    font-weight: 700;
+	background-color: #79a84a;
+	padding: 0 25px;
+	font-weight: 700;
+	color: white;
 }
-
-/* .main-container {
-    @apply mx-auto w-[90%] md:w-[60%] lg:w-[75%] max-w-[1400px]
-} */
-
 
 .btn-login {
-    background-color: #79A84A;
-    padding: 13px 28px;
-    font-weight: 700;
-    color: white;
-
+	background-color: #79a84a;
+	padding: 13px 28px;
+	font-weight: 700;
+	color: white;
 }
 .btn-login:hover {
-    background-color: #91B66D;
-    
+	background-color: #91b66d;
+}
+.drawer a.active {
+	color: #79a84a;
 
+	font-weight: 600;
 }
