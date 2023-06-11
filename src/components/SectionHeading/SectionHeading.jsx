@@ -10,7 +10,7 @@ const SectionHeading = ({ title, heading, center }) => {
 				alt="bgImg"
 			/>
 			<div className="text-4xl text-lime-700 font-bold">{title}</div>
-			<div className="text-neutral-500 mt-2 text-xl leading-8 font-normal w-[90%] md:w-1/2 mx-auto">
+			<div className=" dark:text-white mt-2 text-xl leading-8 font-normal w-[90%] md:w-1/2 mx-auto">
 				{heading}
 			</div>
 		</div>

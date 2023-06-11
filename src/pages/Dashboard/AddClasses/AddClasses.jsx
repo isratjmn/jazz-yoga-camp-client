@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
+import SectionHeading from '../../../components/SectionHeading/SectionHeading';
+
 
 const AddClasses = () => {
 	const { register, handleSubmit, reset } = useForm();

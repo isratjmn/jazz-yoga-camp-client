@@ -7,17 +7,19 @@ import logo2 from "../assets/images/banner/logo2.png";
 import { BiUserPin } from "react-icons/bi";
 import { RiFileUserFill, RiFolderUserFill } from "react-icons/ri";
 import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
-// import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
-import { FaCalendarAlt, FaWallet } from "react-icons/fa";
+import { SiGoogleclassroom } from "react-icons/si";
+import { FaCalendarAlt, FaWallet, FaRestroom } from "react-icons/fa";
 import UseCart from "../hooks/UseCart";
 import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 const DashBoardLayout = () => {
 	const [cart] = UseCart();
 
 	// const isAdmin = true;
-	
+
 	const [isAdmin] = useAdmin();
+	const [isInstructor] = useInstructor();
 
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [isLoading, setIsLoading] = React.useState(false);
@@ -41,7 +43,9 @@ const DashBoardLayout = () => {
 			{isAdmin ? (
 				<>
 					<ul className="mt-10">
-						<h2 className="font-bold text-xl">Admin Dashboard</h2>
+						<h2 className="font-bold text-xl mt-4 ">
+							Admin Dashboard
+						</h2>
 						<li>
 							<NavLink
 								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
@@ -65,33 +69,9 @@ const DashBoardLayout = () => {
 			) : isInstructor ? (
 				<>
 					<ul>
-						<h2 className="font-bold text-xl">
-							Instructor Dashboard
+						<h2 className="font-bold mt-4 text-xl">
+							Student Dashboard
 						</h2>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/addaclass"
-							>
-								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
-								Add Classes
-							</NavLink>
-						</li>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/"
-							>
-								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
-								My Classes
-							</NavLink>
-						</li>
-					</ul>
-				</>
-			) : (
-				<>
-					<ul>
-						<h2 className="font-bold text-xl">Student Dashboard</h2>
 						<li>
 							<NavLink
 								to="/dashboard/selectedclass"
@@ -124,6 +104,32 @@ const DashBoardLayout = () => {
 						</li>
 					</ul>
 				</>
+			) : (
+				<>
+					<ul>
+						<h2 className="font-bold text-xl mt-4">
+							Instructor Dashboard
+						</h2>
+						<li>
+							<NavLink
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								to="/dashboard/addaclass"
+							>
+								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
+								Add Classes
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								to="/dashboard/"
+							>
+								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
+								My Classes
+							</NavLink>
+						</li>
+					</ul>
+				</>
 			)}
 			<div className="flex flex-col w-full">
 				<div className="divider"></div>
@@ -142,7 +148,7 @@ const DashBoardLayout = () => {
 						to="/classes"
 						className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 					>
-						<RiFolderUserFill className="text-xl text-lime-700" />{" "}
+						<FaRestroom className="text-xl text-lime-700" />{" "}
 						Classes
 					</NavLink>
 				</li>

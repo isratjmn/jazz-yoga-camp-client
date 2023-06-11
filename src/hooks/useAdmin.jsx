@@ -1,11 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
-
-
 import useAuth from "./useAuth";
 import useAxios from "./useAxios";
 
 const useAdmin = () => {
-    const { user } = useAuth()
+	const { user } = useAuth();
 	const [axiosSecure] = useAxios();
 
 	// Use Axios Secure with React Query
@@ -18,6 +16,5 @@ const useAdmin = () => {
 		},
 	});
 	return [isAdmin, isAdminLoading];
-    
 };
 export default useAdmin;
