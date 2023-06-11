@@ -12,6 +12,9 @@ import InstratorGallery from "../pages/InstratorGallery/InstratorGallery";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import AddClasses from "../pages/Dashboard/AddClasses/AddClasses";
+import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 
 export const router = createBrowserRouter([
 	{
@@ -64,15 +67,19 @@ export const router = createBrowserRouter([
 				path: "selectedclass",
 				element: <SelectedClass />,
 			},
-			/* {
-				path: "allusers",
-				element: <Allusers />,
+			{
+				path: "myclasses",
+				element: <MyClasses />,
 			},
 
 			{
 				path: "addaclass",
-				element: <AddClass />,
-			}, */
+				element: <AddClasses />,
+			},
+			{
+				path: "manageclass",
+				element: <ManageClasses />,
+			},
 			{
 				path: "manageusers",
 				element: <ManageUsers />,

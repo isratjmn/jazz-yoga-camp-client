@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import UseCart from "../../../hooks/UseCart";
 import { HiTrash } from "react-icons/hi2";
 import Swal from "sweetalert2";
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 
 const SelectedClass = () => {
 	const [cart, refetch] = UseCart();
@@ -43,6 +44,7 @@ const SelectedClass = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Selected Class</title>
 			</Helmet>
+			<SectionHeading title="Selected Classes" center={true} />
 
 			<div className="mt-20 mx-auto text-center">
 				<button class="btn btn-main">Payment</button>
@@ -59,16 +61,18 @@ const SelectedClass = () => {
 							<th>Action</th>
 						</tr>
 					</thead>
-					{cart.length === 0 ? ( 
+					{cart.length === 0 ? (
 						<tbody>
 							<tr>
-								<td colSpan="10" className="text-red-600 font-semibold text-lg mx-auto text-center">
+								<td
+									colSpan="10"
+									className="text-red-600 font-semibold text-lg mx-auto text-center"
+								>
 									Not Selected Any Classes Yet
 								</td>
 							</tr>
 						</tbody>
 					) : (
-						
 						<tbody>
 							{/* row */}
 							{cart.map((item, index) => (
@@ -101,7 +105,6 @@ const SelectedClass = () => {
 									</td>
 								</tr>
 							))}
-
 						</tbody>
 					)}
 					{/* footer */}

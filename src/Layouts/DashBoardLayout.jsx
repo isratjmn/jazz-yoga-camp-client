@@ -10,13 +10,15 @@ import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
 // import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
 import { FaCalendarAlt, FaWallet } from "react-icons/fa";
 import UseCart from "../hooks/UseCart";
+import useAdmin from "../hooks/useAdmin";
 
 const DashBoardLayout = () => {
 	const [cart] = UseCart();
 
-	const isAdmin = true;
+	// const isAdmin = true;
+	
+	const [isAdmin] = useAdmin();
 
-	// const [isAdmin] = useAdmin();
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [isLoading, setIsLoading] = React.useState(false);
 
@@ -39,19 +41,11 @@ const DashBoardLayout = () => {
 			{isAdmin ? (
 				<>
 					<ul className="mt-10">
+						<h2 className="font-bold text-xl">Admin Dashboard</h2>
 						<li>
 							<NavLink
-								className="text-black pt-2 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/adminhome"
-							>
-								<HiHome className="text-xl text-lime-700" />{" "}
-								Admin Home
-							</NavLink>
-						</li>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/manageclasses"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
+								to="/dashboard/manageclass"
 							>
 								<FaIdCardAlt className="text-xl text-lime-700" />{" "}
 								Manage Classes
@@ -59,7 +53,7 @@ const DashBoardLayout = () => {
 						</li>
 						<li>
 							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 								to="/dashboard/manageusers"
 							>
 								<FaUsers className="text-xl text-lime-700" />{" "}
@@ -71,19 +65,13 @@ const DashBoardLayout = () => {
 			) : isInstructor ? (
 				<>
 					<ul>
+						<h2 className="font-bold text-xl">
+							Instructor Dashboard
+						</h2>
 						<li>
 							<NavLink
 								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/instructorhome"
-							>
-								<HiHome className="text-xl text-lime-700" />{" "}
-								Instructor Home
-							</NavLink>
-						</li>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/"
+								to="/dashboard/addaclass"
 							>
 								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
 								Add Classes
@@ -103,15 +91,7 @@ const DashBoardLayout = () => {
 			) : (
 				<>
 					<ul>
-						<li>
-							<NavLink
-								to="/dashboard/studenthome"
-								className="text-black pt-12 lg:text-black text-semibold text-base flex gap-3 items-center"
-							>
-								<HiHome className="text-xl text-lime-700" />
-								Student Home
-							</NavLink>
-						</li>
+						<h2 className="font-bold text-xl">Student Dashboard</h2>
 						<li>
 							<NavLink
 								to="/dashboard/selectedclass"
