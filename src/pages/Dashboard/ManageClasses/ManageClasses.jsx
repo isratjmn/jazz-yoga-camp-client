@@ -8,7 +8,7 @@ const ManageClasses = () => {
 				title="Manage Classes"
 				center={true}
 			/>
-            <h2 className=''>Manage Classes</h2>
+            <h2>Manage Classes</h2>
         </div>
     );
 };

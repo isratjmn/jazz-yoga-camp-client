@@ -5,6 +5,8 @@
 		"email": "john.smith@example.com",
 		"numClasses": 10,
 		"classes": "Hatha Yoga"
+		
+		
 	},
 	{
 		"image": "https://i.ibb.co/q1kPwnD/instrator-6.jpg",
@@ -12,13 +14,17 @@
 		"email": "sarah.johnson@example.com",
 		"numClasses": 15,
 		"classes": "Yin Yoga"
+		
+		
 	},
 	{
 		"image": "https://i.ibb.co/2kqrgG6/instrator-7.jpg",
 		"name": "Michael Brown",
 		"email": "michael.brown@example.com",
 		"numClasses": 8,
+		
 		"classes": "Mindfulness Meditation"
+		
 	},
 	{
 		"image": "https://i.ibb.co/GsR8k2x/instrator-14.jpg",
@@ -26,6 +32,8 @@
 		"email": "emily.davis@example.com",
 		"numClasses": 12,
 		"classes": "Breathwork Meditation"
+		
+		
 	},
 	{
 		"image": "https://i.ibb.co/dbbG6Rn/instrator-5.jpg",
@@ -33,6 +41,8 @@
 		"email": "daniel.wilson@example.com",
 		"numClasses": 5,
 		"classes": "Restorative Yoga"
+		
+		
 	},
 	{
 		"image": "https://i.ibb.co/BP7cN8q/yoga-instructor-2.jpg",
@@ -40,6 +50,8 @@
 		"email": "jessica.martinez@example.com",
 		"numClasses": 20,
 		"classes": "Yoga for Back Pain Relief"
+		
+	
 	},
 	{
 		"image": "https://i.ibb.co/86VqTqq/yoga-studio-instructor-1.jpg",
@@ -47,6 +59,8 @@
 		"email": "andrew.thompson@example.com",
 		"numClasses": 18,
 		"classes": "Prenatal Yoga"
+		
+
 	},
 	{
 		"image": "https://i.ibb.co/J7HV5YC/instrator-15.jpg",
@@ -54,6 +68,7 @@
 		"email": "noah.young@example.com",
 		"numClasses": 4,
 		"classes": "Vinyasa Flow"
+		
 	},
 
 	{
@@ -62,6 +77,8 @@
 		"email": "mia.harris@example.com",
 		"numClasses": 10,
 		"classes": "Yoga for Stress Relief"
+		
+		
 	},
 
 	{
@@ -70,6 +87,7 @@
 		"email": "alexander.johnson@example.com",
 		"numClasses": 9,
 		"classes": "Yoga and Breathwork Meditation"
+		
 	},
 	{
 		"image": "https://i.ibb.co/3S99Yrt/instrator-11.jpg",
@@ -77,6 +95,8 @@
 		"email": "henry.brown@example.com",
 		"numClasses": 11,
 		"classes": "Meditation for Stress Relief"
+		
+		
 	},
 	{
 		"image": "https://i.ibb.co/5Fh815X/instrator-13.jpg",
@@ -84,5 +104,7 @@
 		"email": "michael.brown@example.com",
 		"numClasses": 8,
 		"classes": "Kundalini Yoga"
+		
+		
 	}
 ]

@@ -86,7 +86,8 @@ const DashBoardLayout = () => {
 						</li>
 						<li>
 							<NavLink
-								to="/dashboard/reservations"
+								to="/dashboard/enrollclass"
+							
 								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
 							>
 								<FaCalendarAlt className="text-xl text-lime-700"></FaCalendarAlt>{" "}
@@ -122,7 +123,7 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/"
+								to="/dashboard/myclasses"
 							>
 								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
 								My Classes

@@ -3,17 +3,18 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 const img_hosting_token = import.meta.env.VITE_Image_Upload_Token;
-import SectionHeading from '../../../components/SectionHeading/SectionHeading';
-
+import SectionHeading from "../../../components/SectionHeading/SectionHeading";
+import useAxios from "../../../hooks/useAxios";
+import Swal from "sweetalert2";
 
 const AddClasses = () => {
+	const [axiosSecure] = useAxios();
 	const { register, handleSubmit, reset } = useForm();
 	const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
 
 	const onSubmit = (data) => {
 		console.log(data);
 		const formData = new FormData();
-
 		formData.append("image", data.image[0]);
 		fetch(img_hosting_url, {
 			method: "POST",
@@ -30,6 +31,7 @@ const AddClasses = () => {
 						email,
 						instructorName,
 						availableSeats,
+						
 					} = data;
 					const newItem = {
 						className,
@@ -38,21 +40,22 @@ const AddClasses = () => {
 						instructorName,
 						availableSeats: parseFloat(availableSeats),
 						image: imageURL,
+						
 					};
 					console.log(newItem);
-					/* axiosSecure.post("/menu", newItem).then((data) => {
-						console.log("after posting new menu items", data.data);
+					axiosSecure.post("/carts", newItem).then((data) => {
+						console.log("after posting new Class items", data.data);
 						if (data.data.insertedId) {
 							reset();
 							Swal.fire({
 								position: "top-end",
 								icon: "success",
-								title: "Item Added Successfully",
+								title: "Class Added Successfully",
 								showConfirmButton: false,
 								timer: 1500,
 							});
 						}
-					}); */
+					});
 				}
 			});
 	};
@@ -64,10 +67,10 @@ const AddClasses = () => {
 			</Helmet>
 
 			<div className="mt-10">
-				<SectionHeading title="Manage Classes" center={true} />
+				<SectionHeading title="Add Classes" center={true} />
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className="max-w-2xl  mx-auto p-10 bg-[#edf3f3] shadow-xl rounded-md"
+					className="max-w-2xl mb-52 mt-14 mx-auto p-10 bg-[#edf3f3] shadow-xl rounded-md"
 				>
 					<div className="mb-4">
 						<label
@@ -114,6 +117,7 @@ const AddClasses = () => {
 							type="text"
 							name="instructorName"
 							placeholder="Instructor Name"
+							
 							{...register("instructorName", {
 								required: true,
 								maxLength: 120,

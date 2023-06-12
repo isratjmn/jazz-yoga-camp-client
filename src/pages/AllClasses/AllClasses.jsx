@@ -13,7 +13,7 @@ const AllClasses = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		fetch("classes.json")
+		fetch("http://localhost:5000/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
@@ -29,6 +29,7 @@ const AllClasses = () => {
 				image: item.image,
 				price: item.price,
 				email: user.email,
+				
 			};
 			fetch("http://localhost:5000/carts", {
 				method: "POST",
