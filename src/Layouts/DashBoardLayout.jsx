@@ -2,11 +2,11 @@ import React from "react";
 import Drawer from "react-modern-drawer";
 import { Outlet, NavLink, Link } from "react-router-dom";
 import "react-modern-drawer/dist/index.css";
-import { FaShoppingBag, FaIdCardAlt, FaUsers } from "react-icons/fa";
+import { FaIdCardAlt, FaUsers } from "react-icons/fa";
 import logo2 from "../assets/images/banner/logo2.png";
 import { BiUserPin } from "react-icons/bi";
-import { RiFileUserFill, RiFolderUserFill } from "react-icons/ri";
-import { HiHome, HiBars3CenterLeft, HiShoppingBag } from "react-icons/hi2";
+import { RiFileUserFill } from "react-icons/ri";
+import { HiHome, HiBars3CenterLeft } from "react-icons/hi2";
 import { SiGoogleclassroom } from "react-icons/si";
 import { FaCalendarAlt, FaWallet, FaRestroom } from "react-icons/fa";
 import UseCart from "../hooks/UseCart";
@@ -87,7 +87,6 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								to="/dashboard/enrollclass"
-							
 								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
 							>
 								<FaCalendarAlt className="text-xl text-lime-700"></FaCalendarAlt>{" "}
@@ -149,8 +148,7 @@ const DashBoardLayout = () => {
 						to="/classes"
 						className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 					>
-						<FaRestroom className="text-xl text-lime-700" />{" "}
-						Classes
+						<FaRestroom className="text-xl text-lime-700" /> Classes
 					</NavLink>
 				</li>
 				<li>

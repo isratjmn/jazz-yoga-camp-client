@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import UseCart from "../../hooks/UseCart";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const AllClasses = () => {
 	const [classes, setClasses] = useState([]);
@@ -13,7 +14,7 @@ const AllClasses = () => {
 	const location = useLocation();
 
 	useEffect(() => {
-		fetch("http://localhost:5000/classes")
+		fetch("https://jazz-yoga-camp-server.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
@@ -29,9 +30,8 @@ const AllClasses = () => {
 				image: item.image,
 				price: item.price,
 				email: user.email,
-				
 			};
-			fetch("http://localhost:5000/carts", {
+			fetch("https://jazz-yoga-camp-server.vercel.app/carts", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",
@@ -84,10 +84,10 @@ const AllClasses = () => {
 				<div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] z-[1] "></div>
 			</div>
 			<div className="md:px-20 my-24">
-				<h2 className="text-center text-4xl text-lime-700 font-bold ">
-					{" "}
-					Popular Classes & Informations
-				</h2>
+				<SectionHeading
+					title="Popular Classes & Informations"
+					center={true}
+				/>
 			</div>
 			<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl lg:w-full mx-auto">
 				{classes.map((item) => (

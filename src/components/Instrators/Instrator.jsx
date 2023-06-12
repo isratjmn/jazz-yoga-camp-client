@@ -30,7 +30,7 @@ const Instrator = ({ instrator }) => {
 				</div>
 			</div>
 		</motion.div>
-	);
-};
+	)
+}
 
 export default Instrator;
