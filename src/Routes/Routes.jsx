@@ -11,16 +11,18 @@ import InstratosLayout from "../Layouts/InstratosLayout";
 import InstratorGallery from "../pages/InstratorGallery/InstratorGallery";
 import DashBoardLayout from "../Layouts/DashBoardLayout";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
-import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+
 import AddClasses from "../pages/Dashboard/AddClasses/AddClasses";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
 import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <MainLayout />,
+		errorElement: <ErrorPage></ErrorPage>,
 		children: [
 			{
 				path: "/",
@@ -77,7 +79,7 @@ export const router = createBrowserRouter([
 				path: "addaclass",
 				element: <AddClasses />,
 			},
-			
+
 			{
 				path: "manageclass",
 				element: <ManageClasses />,
