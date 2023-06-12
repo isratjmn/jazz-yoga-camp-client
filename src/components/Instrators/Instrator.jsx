@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 const Instrator = ({ instrator }) => {
+	const { scrollYProgress } = useViewportScroll();
+	const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+	const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 	const { image, name, email, numClasses, classes } = instrator;
 	return (
-		<>
+		<motion.div style={{ opacity, scale }}>
 			<div className="card w-full bg-base-100 p-0 shadow-xl border rounded-xl">
 				<figure>
 					<img
@@ -25,7 +29,7 @@ const Instrator = ({ instrator }) => {
 					
 				</div>
 			</div>
-		</>
+		</motion.div>
 	);
 };
 

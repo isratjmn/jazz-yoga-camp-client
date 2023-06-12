@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useLocation, useNavigate } from "react-router-dom";
+
+
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 
 const InstratorGallery = () => {
@@ -37,36 +38,35 @@ const InstratorGallery = () => {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl lg:w-full mx-auto mt-20">
 					{instructor.map((item) => (
-						<div className="card w-full h-full bg-base-100 p-4 shadow-xl border rounded-xl">
-							<figure>
-								<img
-									className="h-72  object-cover w-full mx-auto mb-6"
-									src={item.image}
-									alt="InstructorImg"
-								/>
-							</figure>
+						
+							<div className="card w-full h-full bg-base-100 p-4 shadow-xl border rounded-xl">
+								<figure>
+									<img
+										className="h-72  object-cover w-full mx-auto mb-6"
+										src={item.image}
+										alt="InstructorImg"
+									/>
+								</figure>
 
-							<div className="card-body text-2xl flex flex-col">
-								<h2 className="card-title text-lime-600 font-[700] text-[26px]">
-									{item.classes}
-								</h2>
-								<h2 className="card-title text-base font-[600]">
-								Instructor Name: {item.name}
-								</h2>
-								
-								<p className="font-semibold text-base">
-									No of Classes: {item.numClasses}
-								</p>
-								
-								
-							
+								<div className="card-body text-2xl flex flex-col">
+									<h2 className="card-title text-lime-600 font-[700] text-[26px]">
+										{item.classes}
+									</h2>
+									<h2 className="card-title text-base font-[600]">
+										Instructor Name: {item.name}
+									</h2>
+
+									<p className="font-semibold text-base">
+										No of Classes: {item.numClasses}
+									</p>
+								</div>
+								<div className="card-actions flex justify-center">
+									<button className="px-8 py-3 rounded-md btn btn-outline border-0 bg-lime-600 border-b-4 border-lime-700 mt-4 text-white hover:bg-lime-600">
+										Watch Classes
+									</button>
+								</div>
 							</div>
-							<div className="card-actions flex justify-center">
-								<button className="px-8 py-3 rounded-md btn btn-outline border-0 bg-lime-600 border-b-4 border-lime-700 mt-4 text-white hover:bg-lime-600">
-									Watch Classes
-								</button>
-							</div>
-						</div>
+						
 					))}
 				</div>
 			</div>

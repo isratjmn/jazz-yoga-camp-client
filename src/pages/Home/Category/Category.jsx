@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import Posture from "../../../components/Category/Posture";
 
+
 const Category = () => {
 	const [postures, setPostures] = useState([]);
 
