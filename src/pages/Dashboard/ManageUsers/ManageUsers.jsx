@@ -15,7 +15,7 @@ const ManageUsers = () => {
 
 	const handleMakeAdmin = (user) => {
 		const updatedUser = { ...user, role: "admin" };
-		fetch(`https://jazz-yoga-camp-server.vercel.app/users/admin/${user._id}`, {
+		fetch(`http://localhost:5000/users/admin/${user._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -43,7 +43,7 @@ const ManageUsers = () => {
 	const handleMakeInstructor = (user) => {
 		const updatedUser = { ...user, role: "instructor" };
 
-		fetch(`https://jazz-yoga-camp-server.vercel.app/users/instructor/${user._id}`, {
+		fetch(`http://localhost:5000/users/instructor/${user._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",
@@ -74,13 +74,8 @@ const ManageUsers = () => {
 				<title>JazzYogaCamp | Manage Users</title>
 			</Helmet>
 			<SectionHeading title="Manage Users" center={true} />
-			<div className="font-bold w-[90%] mx-auto mt-10 flex justify-around items-center text-lg h-[70px]">
-				<h2 className="text-lime-700">
-					Total Selected Classes: {users.length}
-				</h2>
-				<h2 className="text-lime-700">Total Price: $123</h2>
-			</div>
-			<div className="overflow-x-auto w-[88%]  mt-4 mx-auto mb-52 md:mb-28 rounded-md">
+
+			<div className="overflow-x-auto w-[88%] mt-12 mx-auto mb-52 md:mb-28 rounded-md">
 				<table className="table border">
 					{/* head */}
 					<thead>

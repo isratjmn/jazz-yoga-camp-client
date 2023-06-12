@@ -43,7 +43,7 @@ const AddClasses = () => {
 						
 					};
 					console.log(newItem);
-					axiosSecure.post("/carts", newItem).then((data) => {
+					axiosSecure.post("/classes", newItem).then((data) => {
 						console.log("after posting new Class items", data.data);
 						if (data.data.insertedId) {
 							reset();

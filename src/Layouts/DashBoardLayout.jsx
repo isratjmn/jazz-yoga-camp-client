@@ -49,7 +49,7 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/manageclass"
+								to="/dashboard/manageclasses"
 							>
 								<FaIdCardAlt className="text-xl text-lime-700" />{" "}
 								Manage Classes
@@ -61,12 +61,38 @@ const DashBoardLayout = () => {
 								to="/dashboard/manageusers"
 							>
 								<FaUsers className="text-xl text-lime-700" />{" "}
-								Manage Users(All Users)
+								Manage Users
 							</NavLink>
 						</li>
 					</ul>
 				</>
 			) : isInstructor ? (
+				<>
+					<ul>
+						<h2 className="font-bold text-xl mt-4">
+							Instructor Dashboard
+						</h2>
+						<li>
+							<NavLink
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								to="/dashboard/addaclass"
+							>
+								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
+								Add Classes
+							</NavLink>
+						</li>
+						<li>
+							<NavLink
+								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								to="/dashboard/myclasses"
+							>
+								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
+								My Classes
+							</NavLink>
+						</li>
+					</ul>
+				</>
+			) : (
 				<>
 					<ul>
 						<h2 className="font-bold mt-4 text-xl">
@@ -100,32 +126,6 @@ const DashBoardLayout = () => {
 							>
 								<FaWallet className="text-xl text-lime-700"></FaWallet>{" "}
 								Payment History
-							</NavLink>
-						</li>
-					</ul>
-				</>
-			) : (
-				<>
-					<ul>
-						<h2 className="font-bold text-xl mt-4">
-							Instructor Dashboard
-						</h2>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/addaclass"
-							>
-								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
-								Add Classes
-							</NavLink>
-						</li>
-						<li>
-							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
-								to="/dashboard/myclasses"
-							>
-								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
-								My Classes
 							</NavLink>
 						</li>
 					</ul>

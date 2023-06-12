@@ -1,7 +1,5 @@
 import axios from "axios";
-
 import { useNavigate } from "react-router-dom";
-
 import { useEffect } from "react";
 import useAuth from "./useAuth";
 
@@ -10,7 +8,7 @@ const useAxios = () => {
 	const navigate = useNavigate();
 
 	const axiosSecure = axios.create({
-		baseURL: "https://jazz-yoga-camp-server.vercel.app",
+		baseURL: "http://localhost:5000",
 	});
 
 	useEffect(() => {

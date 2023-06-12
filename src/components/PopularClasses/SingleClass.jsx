@@ -47,7 +47,6 @@ const SingleClass = ({ singleClass }) => {
 						/>
 					</figure>
 				</motion.div>
-
 				<div className="card-body flex flex-col">
 					<h2 className="card-title font-bold">{className}</h2>
 					<h2 className="font-bold"></h2>
@@ -61,14 +60,6 @@ const SingleClass = ({ singleClass }) => {
 						Available Seats: {availableSeats} nos
 					</p>
 					<p className="font-bold ">Price: {price} nos</p>
-					<div className="card-actions flex justify-end mt-3">
-						<Link
-							to=""
-							className="bg-lime-700 py-3 px-7 text-white rounded-lg"
-						>
-							Enroll
-						</Link>
-					</div>
 				</div>
 			</div>
 		</>

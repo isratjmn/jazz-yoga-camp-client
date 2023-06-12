@@ -3,7 +3,7 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
+
 import PrivateRoutes from "./PrivateRoutes";
 import AllClassesLayout from "../Layouts/AllClassesLayout";
 import AllClasses from "../pages/AllClasses/AllClasses";
@@ -14,9 +14,12 @@ import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
 
 import AddClasses from "../pages/Dashboard/AddClasses/AddClasses";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
-import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+
 import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
+import ManageClasses from "../pages/Dashboard/ManageClasses/ManageClasses";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
 	{
@@ -81,7 +84,11 @@ export const router = createBrowserRouter([
 			},
 
 			{
-				path: "manageclass",
+				path: "manageusers",
+				element: <ManageUsers />,
+			},
+			{
+				path: "manageclasses",
 				element: <ManageClasses />,
 			},
 			{
