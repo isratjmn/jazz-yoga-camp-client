@@ -4,31 +4,17 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../../hooks/useAxios";
 import Swal from "sweetalert2";
 import { FaCheckCircle } from "react-icons/fa";
-import { useState } from "react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
-	/* const [axiosSecure] = useAxios();
+	const [axiosSecure] = useAxios();
 	const { data: classes = [], refetch } = useQuery(["classes"], async () => {
 		const res = await axiosSecure.get("/classes");
 		return res.data;
-
-
-	}); */
-
-	const [classes, setClasses] = useState([]);
-	useEffect(() => {
-		fetch("http://localhost:5000/classes")
-			.then((res) => res.json())
-			.then((data) => {
-				setClasses(data);
-				console.log(data);
-			});
-	}, []);
+	});
 
 	const handleUpdateStatus = (item, status) => {
-		fetch(`http://localhost:5000/${item._id}/status`, {
+        console.log(item._id);
+		fetch(`http://localhost:5000/classes/status/${item._id}`, {
 			method: "PATCH",
 			headers: {
 				"Content-Type": "application/json",

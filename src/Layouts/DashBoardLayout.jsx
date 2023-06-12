@@ -15,15 +15,11 @@ import useInstructor from "../hooks/useInstructor";
 
 const DashBoardLayout = () => {
 	const [cart] = UseCart();
-
-	// const isAdmin = true;
-
+	
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
-
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [isLoading, setIsLoading] = React.useState(false);
-
 	const toggleDrawer = () => {
 		setIsLoading(true);
 		setTimeout(() => {
@@ -74,7 +70,7 @@ const DashBoardLayout = () => {
 						</h2>
 						<li>
 							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 								to="/dashboard/addaclass"
 							>
 								<HiBars3CenterLeft className="text-xl text-lime-700" />{" "}
@@ -83,7 +79,7 @@ const DashBoardLayout = () => {
 						</li>
 						<li>
 							<NavLink
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 								to="/dashboard/myclasses"
 							>
 								<SiGoogleclassroom className="text-xl text-lime-700" />{" "}
@@ -101,7 +97,7 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								to="/dashboard/selectedclass"
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 							>
 								<BiUserPin className="text-xl text-lime-700" />
 								Selected Classes{" "}
@@ -113,7 +109,7 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								to="/dashboard/enrollclass"
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 							>
 								<FaCalendarAlt className="text-xl text-lime-700"></FaCalendarAlt>{" "}
 								Enrolled Class
@@ -122,7 +118,7 @@ const DashBoardLayout = () => {
 						<li>
 							<NavLink
 								to="/dashboard/history"
-								className="text-black pt-8 lg:text-black text-semibold text-base flex gap-3 items-center"
+								className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 							>
 								<FaWallet className="text-xl text-lime-700"></FaWallet>{" "}
 								Payment History
