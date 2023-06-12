@@ -7,27 +7,27 @@ import { Link } from "react-router-dom";
 
 const MyClasses = () => {
 	const [classes, setClasses] = useState([]);
-
-	const fetchClasses = async () => {
-		try {
-			const response = await axios.get("/classes");
-			setClasses(response.data);
-		} catch (error) {
-			console.log(error);
-		}
-	};
-
-	// Retrieve classes on component mount
 	useEffect(() => {
+		const fetchClasses = async () => {
+			try {
+				const response = await axios.get(
+					"http://localhost:5000/classes"
+				);
+				setClasses(response.data);
+			} catch (error) {
+				console.log(error);
+			}
+		};
 		fetchClasses();
 	}, []);
+
 	return (
 		<div>
 			<Helmet>
 				<title>JazzYogaCamp | My Classes</title>
 			</Helmet>
 			<SectionHeading title="My Classes" center={true} />
-			<div className="overflow-x-auto w-[88%] mt-6 mx-auto rounded-md">
+			<div className="overflow-x-auto w-[88%] mt-12 mx-auto rounded-md">
 				<table className="table">
 					{/* head */}
 					<thead>
@@ -42,27 +42,32 @@ const MyClasses = () => {
 							<th>Action</th>
 						</tr>
 					</thead>
-
 					<tbody>
 						{/* row */}
-						{classes.map((classItem) => (
-							<tr key={classItem.id}>
-								<td>1</td>
+						{classes.map((classItem, index) => (
+							<tr key={classItem._id}>
+								<td>{index + 1}</td>
 								<td>
 									<div className="avatar flex items-center space-x-3">
 										<div className="mask mask-squircle w-12 h-12">
-											<img alt="Avatar" />
+											<img alt={classItem.image} />
 										</div>
 									</div>
 								</td>
 								<td className="text-base font-semibold">
-								{classItem.className}
+									{classItem.className}
 								</td>
-								<td className="text-base font-semibold">{classItem.status}</td>
-								<td className="text-base font-semibold">{classItem.totalEnrolledStudents}</td>
 								<td className="text-base font-semibold">
-								{classItem.feedback}
+									{classItem.enrolledStudents}
 								</td>
+
+								<td className="text-base font-semibold">
+									{classItem.availableSeats}
+								</td>
+								<td className="text-base font-semibold">
+									{classItem.status}
+								</td>
+								<td className="text-base font-semibold">N/A</td>
 								<td className="text-base font-semibold">
 									<td>
 										<button className="btn btn-ghost btn-md bg-slate-100">
@@ -70,7 +75,6 @@ const MyClasses = () => {
 										</button>
 									</td>
 								</td>
-								
 							</tr>
 						))}
 					</tbody>

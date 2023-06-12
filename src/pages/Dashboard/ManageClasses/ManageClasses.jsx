@@ -4,6 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../../hooks/useAxios";
 import Swal from "sweetalert2";
 import { FaCheckCircle } from "react-icons/fa";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ManageClasses = () => {
 	const [axiosSecure] = useAxios();

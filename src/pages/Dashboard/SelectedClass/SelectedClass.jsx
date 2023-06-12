@@ -7,7 +7,6 @@ import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 
 const SelectedClass = () => {
 	const [cart, refetch] = UseCart();
-	console.log(cart);
 	const total = cart.reduce((sum, item) => item.price + sum, 0);
 
 	const handleDelete = (item) => {

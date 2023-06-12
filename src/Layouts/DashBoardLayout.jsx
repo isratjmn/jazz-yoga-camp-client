@@ -15,7 +15,6 @@ import useInstructor from "../hooks/useInstructor";
 
 const DashBoardLayout = () => {
 	const [cart] = UseCart();
-	
 	const [isAdmin] = useAdmin();
 	const [isInstructor] = useInstructor();
 	const [isOpen, setIsOpen] = React.useState(false);
@@ -166,12 +165,10 @@ const DashBoardLayout = () => {
 			<div className="hidden md:block w-72 h-screen drawer bg-[#edf3f3]">
 				<div className="p-6">{navLinks}</div>
 			</div>
-
 			{/* Content */}
 			<div className="flex-grow">
 				<Outlet />
 			</div>
-
 			{/* Toggle Button - Visible for mobile */}
 			<button
 				className="md:hidden btn btn-outline btn-sm btn-error fixed bottom-50 font-bold left-60 transform -translateX(-50%) transition duration-300 text-xs"
