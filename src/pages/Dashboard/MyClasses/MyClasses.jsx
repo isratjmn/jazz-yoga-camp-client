@@ -11,7 +11,7 @@ const MyClasses = () => {
 		const fetchClasses = async () => {
 			try {
 				const response = await axios.get(
-					"http://localhost:5000/classes"
+					"https://jazz-yoga-camp-server.vercel.app/classes"
 				);
 				setClasses(response.data);
 			} catch (error) {
