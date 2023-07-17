@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import UseCart from "../../hooks/UseCart";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
+import PageHeader from "../../components/PageHeader";
 
 const AllClasses = () => {
 	const [classes, setClasses] = useState([]);
@@ -73,7 +74,7 @@ const AllClasses = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Classes</title>
 			</Helmet>
-			<div
+			{/* <div
 				className="blog-banner pt-24 px-20 bg-[url('https://zenergyyoga.ie/wp-content/uploads/2017/01/o-KIDS-DOING-YOGA-facebook.jpeg')] bg-opacity-70  h-[65vh] relative z-80 flex justify-center items-center"
 				style={{
 					backgroundSize: "cover",
@@ -82,7 +83,14 @@ const AllClasses = () => {
 				}}
 			>
 				<div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] z-[1] "></div>
-			</div>
+			</div> */}
+
+			<PageHeader title="Our Claases">
+				<li className="font-bold">
+					<Link to="/">Home</Link>
+				</li>
+				<li className="font-bold">Classes</li>
+			</PageHeader>
 			<div className="md:px-20 my-24">
 				<SectionHeading
 					title="Popular Classes & Informations"

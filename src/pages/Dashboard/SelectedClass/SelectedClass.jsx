@@ -1,13 +1,16 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 import { Helmet } from "react-helmet-async";
 import UseCart from "../../../hooks/UseCart";
 import { HiTrash } from "react-icons/hi2";
 import { BiWallet } from "react-icons/bi";
 import Swal from "sweetalert2";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
+import { useNavigate } from "react-router-dom";
 
 const SelectedClass = () => {
 	const [cart, refetch] = UseCart();
+	const navigate = useNavigate();
 	const total = cart.reduce((sum, item) => item.price + sum, 0);
 	const handleDelete = (item) => {
 		Swal.fire({
@@ -41,6 +44,12 @@ const SelectedClass = () => {
 		});
 	};
 
+	const handlePurchase = (item) => {
+		navigate("/dashboard/payment", {
+			state: item,
+		});
+	};
+
 	return (
 		<div>
 			<Helmet>
@@ -48,10 +57,10 @@ const SelectedClass = () => {
 			</Helmet>
 			<SectionHeading title="Selected Classes" center={true} />
 
-			<div>
+			<Fade direction="up" cascade damping={0.3} triggerOnce>
 				<div className="overflow-x-auto w-[88%] mt-4 mx-auto rounded-md">
 					<table className="table">
-						{/* head */}
+						{/* Head */}
 						<thead>
 							<tr className="bg-gray-200 font-semibold text-base">
 								<th>SL</th>
@@ -62,7 +71,7 @@ const SelectedClass = () => {
 								<th>Action</th>
 							</tr>
 						</thead>
-						{cart.length === 0 ? (
+						{cart?.length === 0 ? (
 							<tbody>
 								<tr>
 									<td
@@ -75,7 +84,7 @@ const SelectedClass = () => {
 							</tbody>
 						) : (
 							<tbody>
-								{/* row */}
+								{/* Row */}
 								{cart.map((item, index) => (
 									<tr key={item._id}>
 										<td>{index + 1}</td>
@@ -96,18 +105,17 @@ const SelectedClass = () => {
 											${item.price}
 										</td>
 										<td className="text-base font-semibold">
-											
-
 											<button
 												className="btn btn-main"
+												disabled={!item.availableSeats}
 												onClick={() =>
-													window.my_modal_3.showModal()
+													handlePurchase(item)
 												}
 											>
 												<BiWallet className="text-2xl" />
 											</button>
 
-											<dialog
+											{/* <dialog
 												id="my_modal_3"
 												className="modal"
 											>
@@ -126,7 +134,7 @@ const SelectedClass = () => {
 														on ✕ button to close
 													</p>
 												</form>
-											</dialog>
+											</dialog> */}
 										</td>
 										<td>
 											<button
@@ -142,7 +150,7 @@ const SelectedClass = () => {
 								))}
 							</tbody>
 						)}
-						{/* footer */}
+						{/* Footer */}
 						<tfoot>
 							<tr className="bg-gray-200 font-semibold text-base">
 								<th>SL</th>
@@ -155,13 +163,7 @@ const SelectedClass = () => {
 						</tfoot>
 					</table>
 				</div>
-				<div className="font-bold w-[90%] mx-auto mb-12 flex justify-around items-center text-lg h-[70px]">
-					<h2 className="text-lime-700">
-						Total Selected Classes: {cart.length}
-					</h2>
-					<h2 className="text-lime-700">Total Price: ${total}</h2>
-				</div>
-			</div>
+			</Fade>
 		</div>
 	);
 };

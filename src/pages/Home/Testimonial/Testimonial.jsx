@@ -44,25 +44,29 @@ const Testimonial = () => {
 					delay: 2200,
 					disableOnInteraction: false,
 				}}
-				
 				modules={[Keyboard, Autoplay, Pagination]}
 				className="mySwiper"
 			>
 				{reviews.map((review) => (
 					<SwiperSlide key={review._id}>
-						<div className="card w-[95%] md:w-[40%] shadow-xl border md:max-w-3xl mt-16 mx-auto h-[470px] lg:h-[300px] my-14">
+						<div className="card w-[95%] md:w-[60%] shadow-xl border md:max-w-3xl mt-10 mx-auto h-[470px] lg:h-[300px] my-10">
 							<div className="card-body">
-								<p className="my-3">{review.testimonial}</p>
+								<p className="my-1 text-sm">
+									{review.testimonial.length > 300
+										? review.testimonial.substr(0, 420) +
+										"..."
+										: review.testimonial}
+								</p>
 								<div className="flex align-middle gap-3 items-center">
 									<figure>
 										<img
 											src={review.image}
-											className="w-16"
+											className="w-10"
 											alt="img"
 										/>
 									</figure>
 									<div>
-										<h3 className="text-xl font-bold text-lime-700">
+										<h3 className="text-base font-bold text-lime-700">
 											{review.name}
 										</h3>
 										<Rating

@@ -23,7 +23,7 @@ const PopularClasses = () => {
 				center={true}
 			/>
 
-			<div className=" mt-20">
+			<div className="mt-20">
 				{!showAll && (
 					<span
 						onClick={handleShowMore}

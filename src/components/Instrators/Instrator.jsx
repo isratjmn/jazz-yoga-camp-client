@@ -1,35 +1,35 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { Fade } from "react-awesome-reveal";
+import { FiMail } from "react-icons/fi";
 
 const Instrator = ({ instrator }) => {
-	const { scrollYProgress } = useViewportScroll();
-	const scale = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
-	const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-	const { image, name, email, numClasses, classes } = instrator;
+	const { image, name, email, numClasses } = instrator;
 	return (
-		<motion.div style={{ opacity, scale }}>
-			<div className="card mx-auto w-full bg-base-100 p-0 shadow-xl border rounded-xl">
-				<figure>
+		<Fade direction="up" triggerOnce>
+			<div className="w-full relative mt-16 bg-base-200 rounded-xl pt-16 text-center p-6">
+				<div className="bg-base-200 w-32 h-32 rounded-full p-2 overflow-hidden absolute z-10 top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
 					<img
-						className="h-72 object-cover w-full mx-auto mb-6"
 						src={image}
-						alt="img"
+						alt="avatar"
+						className="w-full aspect-square object-cover rounded-full object-center"
 					/>
-				</figure>
-				<div className="card-body flex flex-col">
-					<h2 className="card-title font-bold"> Name: {name}</h2>
-					<h2 className="font-bold"></h2>
-					<p className="font-semibold text-lime-600"> {email}</p>
-					
-					<p className="font-semibold">
-						No of Classes: {numClasses} nos
-					</p>
-					
+				</div>
+				<h1 className="text-2xl md:text-3xl font-bold text-neutral mb-4">
+					{name}
+				</h1>
+
+				<div className="menu menu-horizontal gap-3 text-lg">
+					<a
+						href={`mailto:${email}`}
+						className="inline-flex gap-2 items-center"
+					>
+						<FiMail />
+						<span className="text-sm">{email}</span>
+					</a>
 				</div>
 			</div>
-		</motion.div>
-	)
-}
+		</Fade>
+	);
+};
 
 export default Instrator;

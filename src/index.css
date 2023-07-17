@@ -18,7 +18,168 @@
 .btn-login:hover {
 	background-color: #91b66d;
 }
-.drawer a.active {
-	color: #79a84a;
-	font-weight: 700;
+
+
+.rn-gradient-circle {
+	background-image: linear-gradient(45deg, #059dff, #36c6f0);
+	-webkit-filter: blur(100px);
+	filter: blur(100px);
+	@apply fixed w-[500px] h-[500px] top-64 -left-64 -z-10 rounded-full opacity-25;
+}
+
+.rn-gradient-circle.theme-pink {
+	background-image: linear-gradient(45deg, #fb5343, #6549d5);
+	@apply -top-64 -right-64 left-auto bottom-auto;
+}
+
+.gradient-bg {
+	background: linear-gradient(
+			95deg,
+			#79a84a 15%,
+			#49d5ad 45%,
+			#91b66d 75%,
+			#ecfb43
+		)
+		95%/200% 100%;
+}
+
+.gradient-text {
+	background: -webkit-gradient(
+			95deg,
+			#97ff05 15%,
+			#49d5a6 45%,
+			#3fe396 75%,
+			#43fb93 100%
+		)
+		98%/200% 100%;
+	background: linear-gradient(
+			95deg,
+			#09ff00 15%,
+			#0fb248 45%,
+			#069b2e 75%,
+			#035824
+		)
+		98%/200% 100%;
+	@apply bg-clip-text text-transparent;
+}
+
+.menu a {
+	@apply font-medium bg-inherit hover:bg-inherit focus:bg-inherit duration-200;
+}
+
+.menu a:hover {
+	@apply text-primary;
+}
+
+.menu a.active {
+	@apply text-primary;
+}
+
+.btn-gradient {
+	background: linear-gradient(
+			95deg,
+			#05ff7e 15%,
+			#0f9a69 45%,
+			#b6d421 75%,
+			#47e13e
+		)
+		95%/200% 100%;
+	@apply text-white px-8;
+}
+
+.btn-gradient:hover {
+	background: linear-gradient(
+			95deg,
+			#47e13e 15%,
+			#b6d421 45%,
+			#0f9a69 75%,
+			#06a754
+		)
+		70%/200% 100%;
+}
+
+.swiper-pagination-bullet {
+	@apply bg-neutral/70 scale-110 w-10 rounded-none;
+}
+
+.swiper-pagination-bullet-active {
+	@apply bg-secondary;
+}
+
+.container {
+	@apply mx-auto px-4 md:px-6 xl:px-8;
+}
+
+.page-header-dark {
+	background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.8),
+			rgba(0, 0, 0, 0.7)
+		),
+		url("https://cdn.yogajournal.com/wp-content/uploads/2007/08/iStock-1207557002-1.jpg?width=730");
+}
+
+.page-header-light {
+	background-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0.8),
+			rgba(255, 255, 255, 0.7)
+		),
+		url("https://cdn.yogajournal.com/wp-content/uploads/2007/08/iStock-1207557002-1.jpg?width=730");
+}
+
+.breadcrumbs a,
+.footer a {
+	@apply hover:text-primary duration-200;
+}
+
+.dashboard.menu a {
+	@apply border-l-4 border-transparent py-3;
+}
+
+.dashboard.menu a:hover {
+	@apply bg-neutral/10 text-neutral;
+}
+.dashboard.menu a.active {
+	@apply bg-neutral/10 rounded-s-none text-neutral border-secondary;
+}
+
+/* payment */
+.StripeElement,
+.StripeElementIdeal,
+.StripeElementP24,
+.StripeElementEPS,
+.StripeElementFpx {
+	display: block;
+	margin: 10px 0 20px 0;
+	padding: 10px 14px;
+	box-shadow: rgba(50, 50, 93, 0.14902) 0px 1px 3px,
+		rgba(0, 0, 0, 0.0196078) 0px 1px 0px;
+	border-radius: 4px;
+	@apply bg-neutral/10;
+}
+
+/* scrollbar */
+
+/* Create a custom scrollbar */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #a0aec0 #edf2f7;
+}
+
+*::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+	@apply bg-neutral/30 rounded-lg;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	@apply bg-neutral/40;
+}
+
+*::-webkit-scrollbar-track {
+	@apply bg-transparent;
 }
