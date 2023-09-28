@@ -23,12 +23,9 @@ const SelectedClass = () => {
 			confirmButtonText: "Yes, Delete It!",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				fetch(
-					`https://jazz-yoga-camp-server.vercel.app/carts/${item._id}`,
-					{
-						method: "DELETE",
-					}
-				)
+				fetch(`http://127.0.0.1:5000/carts/${item._id}`, {
+					method: "DELETE",
+				})
 					.then((res) => res.json())
 					.then((data) => {
 						if (data.deletedCount > 0) {
@@ -114,27 +111,6 @@ const SelectedClass = () => {
 											>
 												<BiWallet className="text-2xl" />
 											</button>
-
-											{/* <dialog
-												id="my_modal_3"
-												className="modal"
-											>
-												<form
-													method="dialog"
-													className="modal-box"
-												>
-													<button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-														✕
-													</button>
-													<h3 className="font-bold text-lg">
-														Hello!
-													</h3>
-													<p className="py-4">
-														Press ESC key or click
-														on ✕ button to close
-													</p>
-												</form>
-											</dialog> */}
 										</td>
 										<td>
 											<button

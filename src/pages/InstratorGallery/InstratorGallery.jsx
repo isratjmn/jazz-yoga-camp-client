@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const InstratorGallery = () => {
 	const [instructor, setInstructor] = useState([]);
 	useEffect(() => {
-		fetch("https://jazz-yoga-camp-server.vercel.app/instructor")
+		fetch("http://127.0.0.1:5000/instructor")
 			.then((res) => res.json())
 			.then((data) => setInstructor(data));
 	}, []);
@@ -20,16 +20,6 @@ const InstratorGallery = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Popular Instructors</title>
 			</Helmet>
-			{/* <div
-				className="blog-banner pt-24 px-20 bg-[url('https://img.freepik.com/free-photo/woman-practising-yoga-gym-with-trainer_1303-14820.jpg?w=1060&t=st=1686312835~exp=1686313435~hmac=ec6176d4088ac588295c2c860db60484fa813c61a8b352532ef751fc54eac9dc')] bg-opacity-70  h-[65vh] relative z-80 flex justify-center items-center"
-				style={{
-					backgroundSize: "cover",
-					backgroundPosition: "center",
-					objectFit: "cover",
-				}}
-			>
-				<div className="absolute inset-0 bg-[rgba(0,0,0,0.6)] z-[1] "></div>
-			</div> */}
 			<PageHeader title="Our Instructors">
 				<li className="font-bold">
 					<Link to="/">Home</Link>
@@ -71,10 +61,6 @@ const InstratorGallery = () => {
 										</span>
 									</a>
 								</div>
-
-								<button className="px-8 py-3 rounded-md btn btn-outline border-0 bg-lime-600 border-b-4 border-lime-700 mt-4 text-white hover:bg-lime-600">
-									Watch Classes
-								</button>
 							</div>
 						</Fade>
 					))}

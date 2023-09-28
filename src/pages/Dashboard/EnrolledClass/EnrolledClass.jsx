@@ -2,15 +2,10 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import { Fade } from "react-awesome-reveal";
-// import Spinner from "../../../components/Spinner";
-import { RiseLoader } from "react-spinners";
-
 import useEnrolledClasses from "../../../hooks/useEnrolledClasses";
 
-const EnrolledClass = () => {
-	const { enrolledClasses, isLoading } = useEnrolledClasses();
-	// if (isLoading) return <RiseLoader />;
-
+const EnrolledClass = ({ enrollItems }) => {
+	const { enrolledClasses } = useEnrolledClasses();
 	return (
 		<div>
 			<Helmet>
@@ -35,7 +30,7 @@ const EnrolledClass = () => {
 						</thead>
 						<tbody>
 							{/* Rows */}
-							{enrolledClasses?.map((item, i) => (
+							{enrollItems?.map((item, i) => (
 								<tr key={item._id}>
 									<th>{i + 1}</th>
 									<td>
@@ -45,7 +40,7 @@ const EnrolledClass = () => {
 													src={
 														item.classDetails.image
 													}
-													alt=""
+													alt="img"
 												/>
 											</div>
 										</div>
@@ -55,10 +50,13 @@ const EnrolledClass = () => {
 									</td>
 									<td>
 										<h2 className="text-base font-semibold">
-											{item.classDetails.instructor.name}
+											{item?.classDetails.instructor.name}
 										</h2>
 										<p>
-											{item.classDetails.instructor.email}
+											{
+												item?.classDetails.instructor
+													.email
+											}
 										</p>
 									</td>
 									<th className="space-x-3">

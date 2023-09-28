@@ -5,7 +5,7 @@ import PopularClasses from "../PopularClasses/PopularClasses";
 import Instructors from "../Instructors/Instructors";
 import Testimonial from "../Testimonial/Testimonial";
 import { Helmet } from "react-helmet-async";
-import { useScroll } from "framer-motion"
+
 
 const Home = () => {
 	const [theme, setTheme] = useState("light");

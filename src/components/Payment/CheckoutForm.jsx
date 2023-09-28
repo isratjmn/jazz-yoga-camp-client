@@ -1,36 +1,49 @@
 import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { BiWallet } from "react-icons/bi";
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useTheme from "../../hooks/useTheme";
+import useAxios from "../../hooks/useAxios";
+import useAuth from "../../hooks/useAuth";
 import "./CheckoutForm.css";
+import Swal from "sweetalert2";
 
-const CheckoutForm = ({ classDetails }) => {
+const CheckoutForm = ({ cart, classDetails }) => {
+	const { user } = useAuth();
 	const stripe = useStripe();
 	const elements = useElements();
-	const [cardError, setCardError] = useState("");
-	const { user } = useContext(AuthContext);
-	const [clientSecret, setclientSecret] = useState("");
-	const [loading, setLoading] = useState(false);
 	const { theme } = useTheme();
-	const { _id, price, classId } = classDetails;
+	const [CardError, setCardError] = useState("");
+	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
+	const [secureAxios] = useAxios();
+	const [processing, setProcessing] = useState(false);
+	const [clientSecret, setClientSecret] = useState("");
+	const [transactionId, setTransactionId] = useState("");
 
-	useEffect(() => {}, []);
+	// 1. Get ClientSecret From Backend
+	useEffect(() => {
+		if (classDetails?.price > 0) {
+			console.log(classDetails?.price);
+			secureAxios
+				.post("/create-payment-intent", { price: classDetails?.price })
+				.then((res) => {
+					setClientSecret(res.data.clientSecret);
+				});
+		}
+	}, [classDetails?.price, secureAxios]);
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-
 		if (!stripe || !elements) {
 			return;
 		}
-
 		const card = elements.getElement(CardElement);
 		if (card == null) {
 			return;
 		}
+		console.log("card", card);
 
 		const { error, paymentMethod } = await stripe.createPaymentMethod({
 			type: "card",
@@ -41,20 +54,69 @@ const CheckoutForm = ({ classDetails }) => {
 			console.log("[error]", error);
 			setCardError(error.message);
 		} else {
+			setCardError("");
 			console.log("[PaymentMethod]", paymentMethod);
 		}
+		setProcessing(true);
 
-		const { paymentIntent, error: confirmError } = await stripe
-			.confirmCardPayment(clientSecret, {
+		// Confirm Payment
+		const { paymentIntent, error: confirmError } =
+			await stripe.confirmCardPayment(clientSecret, {
 				payment_method: {
 					card: card,
 					billing_details: {
-						name: user?.displayName || "unknown",
-						eamil: user?.eamil || "anonymous",
+						name: user?.displayName || "anonymous",
+						email: user?.email || "unknown",
 					},
 				},
-			})
-			.then(function (result) {});
+			});
+		if (confirmError) {
+			console.log(confirmError);
+			setCardError(confirmError.message);
+		}
+		console.log("payment intent", paymentIntent);
+		setProcessing(false);
+
+		if (paymentIntent && paymentIntent.status === "succeeded") {
+			setTransactionId(paymentIntent.id);
+			// Save Payment Information to the Server
+			const payment = {
+				email: user?.email,
+				date: new Date(),
+				transactionId: paymentIntent.id,
+				paymentAmount: classDetails?.price,
+				quantity: cart.length,
+				cartItems: cart.map((item) => item._id),
+				enrollItems: cart.map((item) => item.itemId),
+				status: "service pending",
+				classesNames: cart.map((item) => item.className),
+			};
+			secureAxios.post("/payments", payment).then((res) => {
+				console.log(res.data);
+				if (res.data && res.data.result && res.data.result.insertedId) {
+					Swal.fire({
+						icon: "success",
+						title: "Success!",
+						text: "Payment successful",
+						timer: 2000,
+						showConfirmButton: false,
+					});
+				}
+				navigate("/dashboard/enrollclass");
+			});
+			if (res.data && res.data.result && res.data.result.insertedId) {
+				Swal.fire({
+					icon: "success",
+					title: "Success!",
+					text: "Payment successful",
+					timer: 2000,
+					showConfirmButton: false,
+				}).then(() => {
+					// Redirect or navigate to another page
+					navigate("/dashboard/enrollclass");
+				});
+			}
+		}
 	};
 
 	return (
@@ -94,7 +156,7 @@ const CheckoutForm = ({ classDetails }) => {
 						style: {
 							base: {
 								fontSize: "16px",
-								
+
 								color: theme === "dark" ? "#eee" : "999999",
 								"::placeholder": {
 									color:
@@ -109,18 +171,13 @@ const CheckoutForm = ({ classDetails }) => {
 						},
 					}}
 				/>
-				{/* <button
-					class="btn btn-main mx-auto"
-					type="submit"
-					disabled={!stripe}
-				>
-					Pay <BiWallet className="text-2xl" />
-				</button> */}
-				{cardError && <p className="text-red-600">{cardError}</p>}
+
 				<div className="text-center mt-4">
 					<button
 						type="submit"
-						disabled={!stripe || loading}
+						disabled={
+							!stripe || !clientSecret || loading || processing
+						}
 						className="btn btn-gradient w-full disabled:text-white"
 					>
 						{loading ? (
@@ -131,7 +188,18 @@ const CheckoutForm = ({ classDetails }) => {
 					</button>
 				</div>
 			</form>
+			{CardError && (
+				<p className="text-red-600 mx-auto mt-4 font-bold">
+					{CardError}
+				</p>
+			)}
+			{transactionId && (
+				<p className="text-lime-700 mx-auto mt-4 w-[70%] font-bold">
+					Transaction Complete with TransactionId: {transactionId}
+				</p>
+			)}
 		</>
 	);
 };
+
 export default CheckoutForm;

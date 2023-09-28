@@ -1,12 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-	// darkMode: "class",
 	daisyui: {
 		themes: [
 			{
 				light: {
-					primary: "#f3f4f6",
+					primary: "#374151",
 					secondary: "#FFC000",
 					accent: "#ffffff", // Navbar backGround Color
 					neutral: "#000000", // Navbar text
@@ -19,7 +18,7 @@ export default {
 			},
 			{
 				dark: {
-					primary: "#374151",
+					primary: "#f3f4f6",
 					secondary: "#FDE68A",
 					accent: "#000000",
 					neutral: "#ffffff",

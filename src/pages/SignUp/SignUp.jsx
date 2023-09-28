@@ -28,7 +28,7 @@ const SignUp = () => {
 			updateUserProfile(data.name, data.photoURL)
 				.then(() => {
 					const saveUser = { name: data.name, email: data.email };
-					fetch("https://jazz-yoga-camp-server.vercel.app/users", {
+					fetch("http://127.0.0.1:5000/users", {
 						method: "POST",
 						headers: {
 							"content-type": "application/json",

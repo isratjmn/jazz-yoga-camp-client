@@ -1,25 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .btn-main {
 	background-color: #79a84a;
 	padding: 0 25px;
 	font-weight: 700;
 	color: white;
 }
-
 .btn-login {
-	background-color: #79a84a;
+	background-color: #79a84a !important;
+
 	padding: 13px 28px;
-	font-weight: 700;
+	font-weight: 700 !important;
 	color: white;
 }
 .btn-login:hover {
-	background-color: #91b66d;
+	color: #069b2e;
 }
-
-
 .rn-gradient-circle {
 	background-image: linear-gradient(45deg, #059dff, #36c6f0);
 	-webkit-filter: blur(100px);

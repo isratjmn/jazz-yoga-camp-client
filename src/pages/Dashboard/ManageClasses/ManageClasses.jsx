@@ -19,7 +19,7 @@ const ManageClasses = () => {
 	const handleUpdateStatus = (item, status) => {
 		console.log(item._id);
 		fetch(
-			`https://jazz-yoga-camp-server.vercel.app/classes/status/${item._id}`,
+			`http://127.0.0.1:5000/classes/status/${item._id}`,
 			{
 				method: "PATCH",
 				headers: {

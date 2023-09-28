@@ -1,12 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Fade } from "react-awesome-reveal";
 
+import { Fade } from "react-awesome-reveal";
 import { useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
 import useTheme from "../../hooks/useTheme";
-
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SingleClass = ({ singleClass }) => {
@@ -33,7 +30,7 @@ const SingleClass = ({ singleClass }) => {
 					className={`w-full rounded-md overflow-hidden ${
 						availableSeats
 							? "bg-base-200"
-							: theme === "dark"
+							: theme === "light"
 							? "bg-red-950"
 							: "bg-red-100"
 					}`}
@@ -66,7 +63,7 @@ const SingleClass = ({ singleClass }) => {
 								}`}
 							>
 								<div
-									className={`w-fit py-2 px-4 rounded-full mb-4 ${
+									className={`w-fit py-2 px-4 rounded-lg mb-4 ${
 										availableSeats
 											? "bg-base-200/90"
 											: "bg-red-500"
@@ -78,8 +75,8 @@ const SingleClass = ({ singleClass }) => {
 											: "No seats available"}
 									</p>
 								</div>
+								
 							</div>
-							
 						</div>
 					</div>
 					<div className="py-10 px-5">

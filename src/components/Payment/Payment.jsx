@@ -5,13 +5,20 @@ import { loadStripe } from "@stripe/stripe-js";
 import { useLocation } from "react-router-dom";
 import { Elements } from "@stripe/react-stripe-js";
 import { Fade } from "react-awesome-reveal";
+import UseCart from "../../hooks/UseCart";
+// import UseCart from "../../hooks/UseCart";
 
 const stripePromise = loadStripe(`${import.meta.env.VITE_Payment_PK}`);
+
 const Payment = () => {
+	const [cart] = UseCart();
 	const { state: classDetails } = useLocation();
 	return (
 		<div>
-			<SectionHeading title="Purchase Course" center={true}></SectionHeading>
+			<SectionHeading
+				title="Purchase Course"
+				center={true}
+			></SectionHeading>
 			<Fade direction="up" cascade damping={0.2} triggerOnce>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
 					<div>
@@ -23,13 +30,16 @@ const Payment = () => {
 						</h1>
 						<img
 							src={classDetails?.image}
-							alt="img"
 							className="w-3/4 rounded-lg"
+							alt="img"
 						/>
 					</div>
 					<div>
 						<Elements stripe={stripePromise}>
-							<CheckoutForm classDetails={classDetails} />
+							<CheckoutForm
+								classDetails={classDetails}
+								cart={cart}
+							/>
 						</Elements>
 					</div>
 				</div>

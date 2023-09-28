@@ -10,7 +10,7 @@ const Instructors = () => {
 	const [showMore, setShowMore] = useState(false);
 
 	useEffect(() => {
-		fetch("https://jazz-yoga-camp-server.vercel.app/instructor")
+		fetch("http://127.0.0.1:5000/instructor")
 			.then((res) => res.json())
 			.then((data) => setInstractors(data));
 	}, []);

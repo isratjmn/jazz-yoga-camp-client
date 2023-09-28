@@ -8,7 +8,9 @@ import LoginSociial from "../../components/Shared/LoginSociial/LoginSociial";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-	const [disabled, setDisabled] = useState(true);
+	const [errorMessage, setErrorMessage] = useState("");
+	const [successMessage, setSuccessMessage] = useState("");
+	// const [disabled, setDisabled] = useState(true);
 	const [showPassword, setShowPassword] = useState(false);
 
 	const { signIn } = useContext(AuthContext);
@@ -19,26 +21,34 @@ const Login = () => {
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
 	} = useForm();
 
 	const onSubmit = (data) => {
 		console.log(data);
-		signIn(data.email, data.password).then((result) => {
-			const user = result.user;
-			console.log(user);
-			Swal.fire({
-				title: "User Login Successful",
-				showClass: {
-					popup: "animate__animated animate__fadeInDown",
-				},
-				hideClass: {
-					popup: "animate__animated animate__fadeOutUp",
-				},
+		signIn(data.email, data.password)
+			.then((result) => {
+				const user = result.user;
+				console.log(user);
+				Swal.fire({
+					title: "User Login Successfully",
+					showClass: {
+						popup: "animate__animated animate__fadeInDown",
+					},
+					hideClass: {
+						popup: "animate__animated animate__fadeOutUp",
+					},
+				});
+				setSuccessMessage("User Login Successful");
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				if (error.code === "auth/user-not-found") {
+					setErrorMessage("Email Address not found");
+				} else if (error.code === "auth/wrong-password") {
+					setErrorMessage("Incorrect password");
+				}
 			});
-			navigate(from, { replace: true });
-		});
 	};
 
 	const toggleShowPassword = () => {
@@ -56,7 +66,9 @@ const Login = () => {
 				</div>
 				<div className="card sm:w-full md:w-1/2 flex flex-col max-w-md p-6 mb-6 rounded-md sm:p-10 bg-[#edf3f3] border text-gray-900">
 					<div className="mb-8 text-center">
-						<h1 className="my-3 text-4xl font-bold text-lime-700">Log In</h1>
+						<h1 className="my-3 text-4xl font-bold text-lime-700">
+							Log In
+						</h1>
 						<p className="text-sm text-gray-400">
 							Sign in to Access the Account
 						</p>
@@ -76,10 +88,13 @@ const Login = () => {
 								<input
 									type="email"
 									name="email"
-									{...register("email")}
-									required
+									{...register("email", {
+										required: "Email is required",
+									})}
 									placeholder="Enter Your Email Here"
-									className="w-full px-3 py-2 border rounded-md border-gray-30 bg-gray-200 text-gray-900"
+									className={`w-full px-3 py-2 border rounded-md border-gray-30 bg-gray-200 text-gray-900 ${
+										errorMessage ? "border-red-500" : ""
+									}`}
 									data-temp-mail-org="0"
 								/>
 							</div>
@@ -91,6 +106,7 @@ const Login = () => {
 									>
 										Password
 									</label>
+
 									<button
 										type="button"
 										className="focus:outline-none absolute top-2/3 right-4 transform -translate-y-1/2"
@@ -145,10 +161,14 @@ const Login = () => {
 									type={showPassword ? "text" : "password"}
 									name="password"
 									{...register("password")}
-									required
 									placeholder="*******"
 									className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900"
 								/>
+								{errorMessage && (
+									<p className="text-red-500 text-sm mt-1">
+										{errorMessage}
+									</p>
+								)}
 							</div>
 						</div>
 
@@ -162,6 +182,7 @@ const Login = () => {
 						</div>
 						<LoginSociial />
 					</form>
+
 					<p className="px-6 text-sm text-center text-gray-400 font-semibold">
 						Don't Have an Account Yet?{" "}
 						<Link

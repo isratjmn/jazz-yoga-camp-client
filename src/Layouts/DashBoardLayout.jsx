@@ -108,7 +108,7 @@ const DashBoardLayout = () => {
 										className="dark:text-white  pt-6 text-semibold text-base flex gap-3 items-center"
 										to="/dashboard/manageusers"
 									>
-										<FaUsers className="text-xl text-lime-700" />{" "}
+										<FaUsers className="text-xl text-lime-700" />
 										Manage Users
 									</NavLink>
 								</li>
@@ -118,7 +118,7 @@ const DashBoardLayout = () => {
 						<>
 							<ul>
 								<h2 className="font-bold mb-4 bg-neutral/10 py-2 rounded-lg justify-center mx-20 text-sm items-center text-lime-700 flex align-middle gap-2">
-									<RiAccountCircleLine className="text-2xl" />{" "}
+									<RiAccountCircleLine className="text-2xl" />
 									Instructor
 								</h2>
 								<li className="mb-4">
@@ -154,7 +154,7 @@ const DashBoardLayout = () => {
 										className="text-black pt-6 lg:text-black text-semibold text-base flex gap-3 items-center"
 									>
 										<BiUserPin className="text-2xl text-lime-700" />
-										Selected Classes{" "}
+										Selected Classes
 										<div className="badge bg-lime-700 text-white p-3 rounded-lg">
 											+{cart?.length || 0}
 										</div>

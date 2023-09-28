@@ -7,8 +7,9 @@ import {
 	FaTwitter,
 	FaGithub,
 	FaDribbble,
-	FaPhoneAlt, FaLocationArrow, FaRegEnvelope
-	
+	FaPhoneAlt,
+	FaLocationArrow,
+	FaRegEnvelope,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -87,50 +88,58 @@ const Footer = () => {
 								<li className="mb-4">Payment</li>
 								<li className="mb-4">Privacy Policy</li>
 							</ul>
-                            <div className="flex pb-4 pt-4 space-x-6 sm:justify-start sm:mt-2">
-							<Link
-								to="#"
-								target="_blank"
-								className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-							>
-								<FaFacebook className="text-[#79A84A] text-2xl" />
-								<span className="sr-only">Facebook page</span>
-							</Link>
-							<a
-								to="https://www.instagram.com/"
-								target="_blank"
-								className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-							>
-								<FaInstagram className="text-[#79A84A] text-2xl" />
-								<span className="sr-only">Instagram page</span>
-							</a>
-							<Link
-								to="https://www.twitter.com/"
-								target="_blank"
-								className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-							>
-								<FaTwitter className="text-[#79A84A] text-2xl" />
-								<span className="sr-only">Twitter page</span>
-							</Link>
-							<Link
-								to="https://github.com/isratjmn"
-								target="_blank"
-								className="text-gray-500 hover:text-gray-800 dark:hover:text-white"
-							>
-								<FaGithub className="text-[#79A84A] text-2xl" />
-								<span className="sr-only">GitHub account</span>
-							</Link>
-							<Link
-								to="https://www.dribble.com/"
-								target="_blank"
-								className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-							>
-								<FaDribbble className="text-[#79A84A] text-2xl" />
-								<span className="sr-only">
-									Dribbble account
-								</span>
-							</Link>
-						</div>
+							<div className="flex pb-4 pt-4 space-x-6 sm:justify-start sm:mt-2">
+								<Link
+									to="#"
+									target="_blank"
+									className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+								>
+									<FaFacebook className="text-[#79A84A] text-2xl" />
+									<span className="sr-only">
+										Facebook page
+									</span>
+								</Link>
+								<a
+									to="https://www.instagram.com/"
+									target="_blank"
+									className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+								>
+									<FaInstagram className="text-[#79A84A] text-2xl" />
+									<span className="sr-only">
+										Instagram page
+									</span>
+								</a>
+								<Link
+									to="https://www.twitter.com/"
+									target="_blank"
+									className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+								>
+									<FaTwitter className="text-[#79A84A] text-2xl" />
+									<span className="sr-only">
+										Twitter page
+									</span>
+								</Link>
+								<Link
+									to="https://github.com/isratjmn"
+									target="_blank"
+									className="text-gray-500 hover:text-gray-800 dark:hover:text-white"
+								>
+									<FaGithub className="text-[#79A84A] text-2xl" />
+									<span className="sr-only">
+										GitHub account
+									</span>
+								</Link>
+								<Link
+									to="https://www.dribble.com/"
+									target="_blank"
+									className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+								>
+									<FaDribbble className="text-[#79A84A] text-2xl" />
+									<span className="sr-only">
+										Dribbble account
+									</span>
+								</Link>
+							</div>
 						</div>
 					</div>
 
@@ -146,7 +155,6 @@ const Footer = () => {
 						<div className="flex flex-wrap justify-between gap-4 ">
 							<div className="flex gap-2"></div>
 						</div>
-						
 					</div>
 				</footer>
 				{/* <div
