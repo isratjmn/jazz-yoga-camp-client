@@ -4,8 +4,10 @@ import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import { Fade } from "react-awesome-reveal";
 import useEnrolledClasses from "../../../hooks/useEnrolledClasses";
 
-const EnrolledClass = ({ enrollItems }) => {
+const EnrolledClass = () => {
 	const { enrolledClasses } = useEnrolledClasses();
+	console.log(enrolledClasses);
+
 	return (
 		<div>
 			<Helmet>
@@ -30,34 +32,26 @@ const EnrolledClass = ({ enrollItems }) => {
 						</thead>
 						<tbody>
 							{/* Rows */}
-							{enrollItems?.map((item, i) => (
+							{enrolledClasses?.map((item) => (
 								<tr key={item._id}>
-									<th>{i + 1}</th>
 									<td>
 										<div className="avatar">
 											<div className="mask mask-squircle w-16 h-16">
 												<img
-													src={
-														item.classDetails.image
-													}
+													src={item?.carts.image}
 													alt="img"
 												/>
 											</div>
 										</div>
 									</td>
 									<td className="text-lg font-semibold">
-										{item.classDetails.name}
+										{item?.carts.className}
 									</td>
 									<td>
 										<h2 className="text-base font-semibold">
-											{item?.classDetails.instructor.name}
+											{item?.carts.itemId}
 										</h2>
-										<p>
-											{
-												item?.classDetails.instructor
-													.email
-											}
-										</p>
+										<p>{item?.email}</p>
 									</td>
 									<th className="space-x-3">
 										{moment(item.date).format(

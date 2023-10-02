@@ -79,21 +79,23 @@ const CheckoutForm = ({ cart, classDetails }) => {
 
 		if (paymentIntent && paymentIntent.status === "succeeded") {
 			setTransactionId(paymentIntent.id);
+
 			// Save Payment Information to the Server
 			const payment = {
-				email: user?.email,
-				date: new Date(),
 				transactionId: paymentIntent.id,
-				paymentAmount: classDetails?.price,
+				userEmail: user?.email,
+				date: new Date(),
 				quantity: cart.length,
+				paymentAmount: classDetails?.price,
 				cartItems: cart.map((item) => item._id),
 				enrollItems: cart.map((item) => item.itemId),
-				status: "service pending",
 				classesNames: cart.map((item) => item.className),
+
+			
 			};
 			secureAxios.post("/payments", payment).then((res) => {
 				console.log(res.data);
-				if (res.data && res.data.result && res.data.result.insertedId) {
+				if (res.data && res.data.insertResult.insertedId) {
 					Swal.fire({
 						icon: "success",
 						title: "Success!",
@@ -101,21 +103,10 @@ const CheckoutForm = ({ cart, classDetails }) => {
 						timer: 2000,
 						showConfirmButton: false,
 					});
-				}
-				navigate("/dashboard/enrollclass");
-			});
-			if (res.data && res.data.result && res.data.result.insertedId) {
-				Swal.fire({
-					icon: "success",
-					title: "Success!",
-					text: "Payment successful",
-					timer: 2000,
-					showConfirmButton: false,
-				}).then(() => {
-					// Redirect or navigate to another page
+					console.log("payment-success");
 					navigate("/dashboard/enrollclass");
-				});
-			}
+				}
+			});
 		}
 	};
 
@@ -171,7 +162,6 @@ const CheckoutForm = ({ cart, classDetails }) => {
 						},
 					}}
 				/>
-
 				<div className="text-center mt-4">
 					<button
 						type="submit"
@@ -194,7 +184,7 @@ const CheckoutForm = ({ cart, classDetails }) => {
 				</p>
 			)}
 			{transactionId && (
-				<p className="text-lime-700 mx-auto mt-4 w-[70%] font-bold">
+				<p className="text-lime-700 mx-auto mt-4 font-bold">
 					Transaction Complete with TransactionId: {transactionId}
 				</p>
 			)}

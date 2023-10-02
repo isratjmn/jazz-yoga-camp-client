@@ -1,11 +1,10 @@
-import React from "react";
-import useAuth from "./useAuth";
-import useAxios from "./useAxios";
 import { useQuery } from "@tanstack/react-query";
+import useAxios from "./useAxios";
+import useAuth from "./useAuth";
 
 const useEnrolledClasses = () => {
+	const [secureAxios] = useAxios();
 	const { user } = useAuth();
-	const secureAxios = useAxios();
 
 	const { data: enrolledClasses = [], isLoading } = useQuery({
 		queryKey: ["enrolled-classes", user?.email],
