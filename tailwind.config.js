@@ -1,18 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-	daisyui: {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  /* daisyui: {
 		themes: [
 			{
 				light: {
-					primary: "#374151",
+					// primary: "#374151",
 					secondary: "#FFC000",
-					accent: "#ffffff", // Navbar backGround Color
-					neutral: "#000000", // Navbar text
+					accent: "#ffffff", 
+					neutral: "#000000", 
 					"base-100": "#ffffff",
 					info: "#1B1821",
-					success: "#000000", // backGround color
-					warning: "#1B1821", // button color
+					success: "#000000", 
+					warning: "#1B1821", 
 					error: "#ffffff",
 				},
 			},
@@ -30,6 +30,6 @@ export default {
 				},
 			},
 		],
-	},
-	plugins: [require("daisyui")],
-};
+	}, */
+  plugins: [require('daisyui')]
+}

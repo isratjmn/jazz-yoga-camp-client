@@ -17,7 +17,6 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
-
 	const gooleProvider = new GoogleAuthProvider();
 
 	const createUser = (email, password) => {
@@ -50,7 +49,7 @@ const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);
-			console.log("Current User", currentUser);
+			// console.log("Current User", currentUser);
 				
 				if (currentUser) {
 					axios
@@ -58,7 +57,7 @@ const AuthProvider = ({ children }) => {
 							email: currentUser.email,
 						})
 						.then((data) => {
-							console.log(data.data.token);
+							// console.log(data.data.token);
 							localStorage.setItem("access-token", data.data.token);
 							setLoading(false);
 						});

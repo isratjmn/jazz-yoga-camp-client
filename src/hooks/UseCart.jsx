@@ -1,4 +1,3 @@
-
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "./useAuth";
 const UseCart = () => {
@@ -22,3 +21,5 @@ const UseCart = () => {
 	return [cart, refetch];
 };
 export default UseCart;
+
+

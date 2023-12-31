@@ -16,13 +16,11 @@ const AllClasses = () => {
 	const location = useLocation();
 	const [cartClasses, setCartClasses] = useState([]);
 	const [hoveredItem, setHoveredItem] = useState(null);
-
 	useEffect(() => {
 		fetch("http://127.0.0.1:5000/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
-
 	const handleAddCart = (item) => {
 		console.log(item);
 		if (user && user.email) {
@@ -88,7 +86,6 @@ const AllClasses = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Classes</title>
 			</Helmet>
-
 			<PageHeader title="Our Classes">
 				<li className="font-bold">
 					<Link to="/">Home</Link>

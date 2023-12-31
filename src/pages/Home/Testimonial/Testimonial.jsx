@@ -5,13 +5,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
-
 // import required modules
 import { EffectCreative } from "swiper";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-
 // import required modules
 import { Keyboard, Autoplay, Pagination } from "swiper";
 
@@ -54,7 +52,7 @@ const Testimonial = () => {
 								<p className="my-1 text-sm md:text-base">
 									{review.testimonial.length > 300
 										? review.testimonial.substr(0, 420) +
-										"..."
+										  "..."
 										: review.testimonial}
 								</p>
 								<div className="flex align-middle gap-3 items-center">

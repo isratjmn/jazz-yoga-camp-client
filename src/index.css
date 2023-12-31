@@ -23,12 +23,10 @@
 	filter: blur(100px);
 	@apply fixed w-[500px] h-[500px] top-64 -left-64 -z-10 rounded-full opacity-25;
 }
-
 .rn-gradient-circle.theme-pink {
 	background-image: linear-gradient(45deg, #fb5343, #6549d5);
 	@apply -top-64 -right-64 left-auto bottom-auto;
 }
-
 .gradient-bg {
 	background: linear-gradient(
 			95deg,
@@ -39,7 +37,6 @@
 		)
 		95%/200% 100%;
 }
-
 .gradient-text {
 	background: -webkit-gradient(
 			95deg,
@@ -59,19 +56,15 @@
 		98%/200% 100%;
 	@apply bg-clip-text text-transparent;
 }
-
 .menu a {
 	@apply font-medium bg-inherit hover:bg-inherit focus:bg-inherit duration-200;
 }
-
 .menu a:hover {
 	@apply text-primary;
 }
-
 .menu a.active {
 	@apply text-primary;
 }
-
 .btn-gradient {
 	background: linear-gradient(
 			95deg,
@@ -83,7 +76,6 @@
 		95%/200% 100%;
 	@apply text-white px-8;
 }
-
 .btn-gradient:hover {
 	background: linear-gradient(
 			95deg,
@@ -115,7 +107,6 @@
 		),
 		url("https://cdn.yogajournal.com/wp-content/uploads/2007/08/iStock-1207557002-1.jpg?width=730");
 }
-
 .page-header-light {
 	background-image: linear-gradient(
 			to bottom,
@@ -157,7 +148,6 @@
 }
 
 /* scrollbar */
-
 /* Create a custom scrollbar */
 * {
 	scrollbar-width: thin;

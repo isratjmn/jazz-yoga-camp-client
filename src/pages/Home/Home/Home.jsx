@@ -8,10 +8,10 @@ import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
-	const [theme, setTheme] = useState("light");
+	/* const [theme, setTheme] = useState("light");
 	const toggleTheme = () => {
 		setTheme(theme === "light" ? "dark" : "light");
-	};
+	}; */
 	return (
 		<div>
 			<Helmet>

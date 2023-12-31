@@ -53,35 +53,3 @@ return (
 	</div>
 );
 
-
-SingleClass.jsx
-<div className="card w-[90%] md:w-full h-full bg-base-100 p-4 shadow-xl mx-auto border rounded-xl">
-				<motion.div
-					style={{
-						scale,
-						opacity,
-					}}
-				>
-					<figure>
-						<img
-							className="h-72 object-cover w-full mx-auto mb-6"
-							src={image}
-							alt="ClassImg"
-						/>
-					</figure>
-				</motion.div>
-				<div className="card-body flex flex-col">
-					<h2 className="card-title font-bold">{className}</h2>
-					<h2 className="font-bold"></h2>
-					<p className="font-semibold text-lime-600">
-						Instructor Name: {instructorName}
-					</p>
-					<p className="font-semibold text-lime-600">
-						Enrolled Students: {enrolledStudents} nos
-					</p>
-					<p className="font-semibold text-lime-600">
-						Available Seats: {availableSeats} nos
-					</p>
-					<p className="font-bold ">Price: {price}</p>
-				</div>
-			</div>

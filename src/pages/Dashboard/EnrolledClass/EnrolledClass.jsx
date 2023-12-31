@@ -6,7 +6,6 @@ import useEnrolledClasses from "../../../hooks/useEnrolledClasses";
 
 const EnrolledClass = () => {
 	const { enrolledClasses } = useEnrolledClasses();
-	console.log(enrolledClasses);
 
 	return (
 		<div>
@@ -53,11 +52,12 @@ const EnrolledClass = () => {
 										</h2>
 										<p>{item?.email}</p>
 									</td>
-									<th className="space-x-3">
+									<td className="space-x-3">
+										{/* Display the enrollment date using moment.js */}
 										{moment(item.date).format(
 											"DD MMM YYYY"
 										)}
-									</th>
+									</td>
 								</tr>
 							))}
 						</tbody>

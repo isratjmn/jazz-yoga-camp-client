@@ -1,6 +1,6 @@
 import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { BiWallet } from "react-icons/bi";
+import { ImSpinner9 } from "react-icons/im";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useTheme from "../../hooks/useTheme";
@@ -18,9 +18,9 @@ const CheckoutForm = ({ cart, classDetails }) => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 	const [secureAxios] = useAxios();
-	const [processing, setProcessing] = useState(false);
 	const [clientSecret, setClientSecret] = useState("");
 	const [transactionId, setTransactionId] = useState("");
+	const [processing, setProcessing] = useState(false);
 
 	// 1. Get ClientSecret From Backend
 	useEffect(() => {
@@ -79,19 +79,18 @@ const CheckoutForm = ({ cart, classDetails }) => {
 
 		if (paymentIntent && paymentIntent.status === "succeeded") {
 			setTransactionId(paymentIntent.id);
-
 			// Save Payment Information to the Server
 			const payment = {
-				transactionId: paymentIntent.id,
 				userEmail: user?.email,
+				transactionId: paymentIntent.id,
+				paymentAmount: classDetails?.price,
 				date: new Date(),
 				quantity: cart.length,
-				paymentAmount: classDetails?.price,
-				cartItems: cart.map((item) => item._id),
-				enrollItems: cart.map((item) => item.itemId),
-				classesNames: cart.map((item) => item.className),
-
-			
+				cartItems: cart[0]._id,
+				enrollItems: cart[0].itemId, 
+				classes: cart[0].className,
+				instructor: cart[0].instructorName,
+				imageURL: cart[0].image,
 			};
 			secureAxios.post("/payments", payment).then((res) => {
 				console.log(res.data);
@@ -103,8 +102,9 @@ const CheckoutForm = ({ cart, classDetails }) => {
 						timer: 2000,
 						showConfirmButton: false,
 					});
-					console.log("payment-success");
+
 					navigate("/dashboard/enrollclass");
+					setProcessing(false);
 				}
 			});
 		}
@@ -162,6 +162,7 @@ const CheckoutForm = ({ cart, classDetails }) => {
 						},
 					}}
 				/>
+
 				<div className="text-center mt-4">
 					<button
 						type="submit"
@@ -171,9 +172,18 @@ const CheckoutForm = ({ cart, classDetails }) => {
 						className="btn btn-gradient w-full disabled:text-white"
 					>
 						{loading ? (
-							<span className="loading font-bold loading-spinner"></span>
+							<span className="loading loading-spinner font-extrabold"></span>
 						) : (
-							"Payment"
+							<>
+								{processing ? (
+									<ImSpinner9
+										className="m-auto animate-spin"
+										size={24}
+									/>
+								) : (
+									`Pay ${classDetails?.price}$`
+								)}
+							</>
 						)}
 					</button>
 				</div>
