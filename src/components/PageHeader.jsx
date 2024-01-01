@@ -5,9 +5,7 @@ const PageHeader = ({ title, children }) => {
   const { theme } = useTheme();
   return (
     <div
-      className={`h-[500px] text-center grid place-content-center object-cover object-bottom bg-cover bg-fixed border-neutral/10 ${
-        theme === "dark" ? "page-header-dark" : "page-header-light"
-      }`}
+      className={`h-[500px] text-center grid place-content-center object-cover object-bottom bg-cover bg-fixed border-neutral/10`}
       style={{
         backgroundPosition: "bottom",
       }}

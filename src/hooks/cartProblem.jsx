@@ -16,7 +16,7 @@ const UseCart = () => {
 
 		queryFn: async () => {
 			const res = await fetch(
-				`http://127.0.0.1:5000/carts?email=${user?.email}`,
+				`https://jazz-yoga-camp-server.vercel.app/carts?email=${user?.email}`,
 				{
 					headers: {
 						authorization: `bearer ${token}`,

@@ -10,7 +10,7 @@ const PopularClasses = () => {
 	};
 
 	useEffect(() => {
-		fetch("http://127.0.0.1:5000/classes")
+		fetch("https://jazz-yoga-camp-server.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);

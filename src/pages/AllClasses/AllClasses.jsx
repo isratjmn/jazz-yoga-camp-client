@@ -17,7 +17,7 @@ const AllClasses = () => {
 	const [cartClasses, setCartClasses] = useState([]);
 	const [hoveredItem, setHoveredItem] = useState(null);
 	useEffect(() => {
-		fetch("http://127.0.0.1:5000/classes")
+		fetch("https://jazz-yoga-camp-server.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => setClasses(data));
 	}, []);
@@ -44,7 +44,7 @@ const AllClasses = () => {
 				price: item.price,
 				email: user.email,
 			};
-			fetch("http://127.0.0.1:5000/carts", {
+			fetch("https://jazz-yoga-camp-server.vercel.app/carts", {
 				method: "POST",
 				headers: {
 					"content-type": "application/json",

@@ -110,7 +110,7 @@ const NavBar = ({ children }) => {
 	);
 
 	return (
-		<div data-theme={dark ? "dark" : "light"}>
+		<div>
 			<div className="navbar fixed z-10 bg-[#edf3f3] text-white md:px-20 w-full font-popins shadow-md">
 				<div className="navbar-start">
 					<div className="dropdown">

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const InstratorGallery = () => {
 	const [instructor, setInstructor] = useState([]);
 	useEffect(() => {
-		fetch("http://127.0.0.1:5000/instructor")
+		fetch("https://jazz-yoga-camp-server.vercel.app/instructor")
 			.then((res) => res.json())
 			.then((data) => setInstructor(data));
 	}, []);

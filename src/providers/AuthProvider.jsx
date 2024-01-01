@@ -53,7 +53,7 @@ const AuthProvider = ({ children }) => {
 				
 				if (currentUser) {
 					axios
-						.post("http://127.0.0.1:5000/jwt", {
+						.post("https://jazz-yoga-camp-server.vercel.app/jwt", {
 							email: currentUser.email,
 						})
 						.then((data) => {
