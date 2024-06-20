@@ -58,7 +58,6 @@ const CheckoutForm = ({ cart, classDetails }) => {
 			console.log("[PaymentMethod]", paymentMethod);
 		}
 		setProcessing(true);
-
 		// Confirm Payment
 		const { paymentIntent, error: confirmError } =
 			await stripe.confirmCardPayment(clientSecret, {
@@ -79,7 +78,6 @@ const CheckoutForm = ({ cart, classDetails }) => {
 
 		if (paymentIntent && paymentIntent.status === "succeeded") {
 			setTransactionId(paymentIntent.id);
-			// Save Payment Information to the Server
 			const payment = {
 				userEmail: user?.email,
 				transactionId: paymentIntent.id,

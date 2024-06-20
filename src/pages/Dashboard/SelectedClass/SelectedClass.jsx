@@ -23,9 +23,12 @@ const SelectedClass = () => {
 			confirmButtonText: "Yes, Delete It!",
 		}).then((result) => {
 			if (result.isConfirmed) {
-				fetch(`https://jazz-yoga-camp-server.vercel.app/carts/${item._id}`, {
-					method: "DELETE",
-				})
+				fetch(
+					`https://jazz-yoga-camp-server.vercel.app/carts/${item._id}`,
+					{
+						method: "DELETE",
+					}
+				)
 					.then((res) => res.json())
 					.then((data) => {
 						if (data.deletedCount > 0) {

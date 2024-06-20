@@ -60,7 +60,6 @@ const ManageClasses = () => {
 					<table className="table">
 						{/* head */}
 						<thead>
-							
 							<tr className="text-base text-neutral text-center">
 								<th className="bg-neutral/10 rounded-tl-lg">
 									##

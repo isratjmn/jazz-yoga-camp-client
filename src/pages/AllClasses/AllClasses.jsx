@@ -7,6 +7,7 @@ import UseCart from "../../hooks/UseCart";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import PageHeader from "../../components/PageHeader";
 import Swal from "sweetalert2";
+import heroImage from "../../assets/images/banner/banner-9.jpg";
 
 const AllClasses = () => {
 	const [classes, setClasses] = useState([]);
@@ -86,7 +87,7 @@ const AllClasses = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Classes</title>
 			</Helmet>
-			<PageHeader title="Our Classes">
+			<PageHeader title="Our Classes" imageUrl={heroImage}>
 				<li className="font-bold">
 					<Link to="/">Home</Link>
 				</li>

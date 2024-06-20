@@ -19,7 +19,6 @@ const useAxios = () => {
 			}
 			return config;
 		});
-
 		// 2. Intercept Response (Client <---- Server)
 		axiosSecure.interceptors.response.use(
 			(response) => response,

@@ -49,15 +49,12 @@ const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			setUser(currentUser);
-			// console.log("Current User", currentUser);
-				
 				if (currentUser) {
 					axios
 						.post("https://jazz-yoga-camp-server.vercel.app/jwt", {
 							email: currentUser.email,
 						})
 						.then((data) => {
-							// console.log(data.data.token);
 							localStorage.setItem("access-token", data.data.token);
 							setLoading(false);
 						});

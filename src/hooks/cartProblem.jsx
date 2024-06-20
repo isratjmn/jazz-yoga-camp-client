@@ -25,11 +25,6 @@ const UseCart = () => {
 			);
 			return res.json();
 		},
-		/* queryFn: async () => {
-			const res = await axiosSecure(`/carts?email=${user?.email}`);
-			console.log("res From Axios", res);
-			return res.data;
-		}, */
 	});
 	return [cart, refetch];
 };

@@ -9,7 +9,6 @@ import useAuth from "../../../hooks/useAuth";
 import { useState } from "react";
 
 const PaymentHistory = () => {
-	// const { enrolledClasses, isLoading } = useEnrolledClasses();
 	const [secureAxios] = useAxios();
 	const { user } = useAuth();
 	const [paymentHistories, setPaymentHistories] = useState([]);

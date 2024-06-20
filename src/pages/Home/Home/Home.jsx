@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import PopularClasses from "../PopularClasses/PopularClasses";
 import Instructors from "../Instructors/Instructors";
 import Testimonial from "../Testimonial/Testimonial";
 import { Helmet } from "react-helmet-async";
-
 
 const Home = () => {
 	/* const [theme, setTheme] = useState("light");

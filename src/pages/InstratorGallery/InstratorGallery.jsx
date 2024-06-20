@@ -7,6 +7,8 @@ import { FiMail } from "react-icons/fi";
 import PageHeader from "../../components/PageHeader";
 import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { Link } from "react-router-dom";
+import heroImage from "../../assets/images/banner/banner-10.jpg";
+
 
 const InstratorGallery = () => {
 	const [instructor, setInstructor] = useState([]);
@@ -20,7 +22,7 @@ const InstratorGallery = () => {
 			<Helmet>
 				<title>JazzYogaCamp | Popular Instructors</title>
 			</Helmet>
-			<PageHeader title="Our Instructors">
+			<PageHeader title="Our Instructors" imageUrl={heroImage}>
 				<li className="font-bold">
 					<Link to="/">Home</Link>
 				</li>

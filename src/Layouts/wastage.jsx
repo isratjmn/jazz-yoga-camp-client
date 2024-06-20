@@ -21,8 +21,6 @@
 	</div>
 </div>;
 
-// DashboardLayout.jsx
-
 return (
 	<div className="flex">
 		{/* Sidebar - Fixed for desktop */}
@@ -40,7 +38,6 @@ return (
 		>
 			{isLoading ? "Loading..." : "Show"}
 		</button>
-
 		{/* Drawer - Visible for mobile */}
 		<Drawer
 			open={isOpen}
@@ -52,4 +49,3 @@ return (
 		</Drawer>
 	</div>
 );
-

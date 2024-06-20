@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
-// import required modules
+
 import { EffectCreative } from "swiper";
 import SectionHeading from "../../../components/SectionHeading/SectionHeading";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-// import required modules
+
 import { Keyboard, Autoplay, Pagination } from "swiper";
 
 const Testimonial = () => {
@@ -22,7 +20,7 @@ const Testimonial = () => {
 			.then((data) => setReviews(data));
 	}, []);
 	return (
-		<div>
+		<div className="mb-16">
 			<SectionHeading
 				title="Client Testimonials"
 				heading="Practicing yoga and meditation through this website has truly transformed my life."
